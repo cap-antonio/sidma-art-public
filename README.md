@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Monaco admin panel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Private placemarket of arts
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Run the command `yarn` for dependencies installation.
 
-### `yarn start`
+## Build
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run the command `yarn build` for build.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Run the command `yarn global add hygen` to be able to use a file generator.
 
-### `yarn test`
+## Status
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+_In process…_
 
-### `yarn build`
+## Code-style guide
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Types](docs/types.md)
+- [Component organizations](docs/components.md)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Branch name style
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Please use this branch name pattern branch_type/DEV-number_of_the_task-brief_description.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Example for feature: `feature/DEV-01-add-readme`
+- Example for bug: `bugfix/DEV-02-fix-readme`
