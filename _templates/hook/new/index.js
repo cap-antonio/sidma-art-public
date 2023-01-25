@@ -10,7 +10,7 @@ module.exports = {
       ])
       .then(async (answers) => {
         const { hook_name } = answers
-        const dir_path = 'src/hooks'
+        const dir_path = 'src/shared/hooks'
         const hook_path = `${dir_path}/${hook_name}`
 
         return {

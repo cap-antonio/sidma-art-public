@@ -1,6 +1,8 @@
 # Monaco admin panel
 
-Private placemarket of arts
+Private placemarket of arts designed with Feature-sliced Design architecture
+
+- description and examples: https://feature-sliced.design/
 
 ## Installation
 
