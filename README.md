@@ -12,6 +12,8 @@ _In process…_
 
 Source and target branch is dev.
 
+For every task must be created a new branch from the source branch.
+
 Checkout the dev branch first: `git checkout dev`.
 Proceed with the Installation step then.
 
