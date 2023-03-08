@@ -1,4 +1,4 @@
-# Monaco admin panel
+# Sidma Art Store
 
 Private placemarket of arts designed with Feature-sliced Design architecture
 
