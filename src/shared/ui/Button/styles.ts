@@ -9,7 +9,7 @@ export const StyledButton = styled.button<TStyledButton>`
   margin: 48px;
   cursor: pointer;
   transition: 0.35s;
-
+  border-radius: 4px;
   &:hover {
     background: black;
     color: white;

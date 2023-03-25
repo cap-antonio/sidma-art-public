@@ -1,14 +1,19 @@
-import { ChangeEventHandler, FC } from 'react'
+import { FC } from 'react'
 import { StyledInput } from './styles'
+import { TInput } from './types'
 
-type TInput = {
-  value?: string
-  onChange?: ChangeEventHandler<HTMLInputElement>
-  placeholder?: string
-}
-
-export const Input: FC<TInput> = ({ value, onChange, placeholder }) => {
+export const Input: FC<TInput> = ({
+  value,
+  onChange,
+  placeholder,
+  variant,
+}) => {
   return (
-    <StyledInput value={value} onChange={onChange} placeholder={placeholder} />
+    <StyledInput
+      variant={variant}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+    />
   )
 }

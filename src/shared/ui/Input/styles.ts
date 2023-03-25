@@ -1,11 +1,15 @@
 import styled from '@emotion/styled'
+import { TInput } from './types'
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<TInput>`
   display: flex;
-  padding: 5px;
-  margin: 10px;
   height: 40px;
-  &::placeholder {
-    color: black;
-  }
+  outline: none;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  color: ${({ variant }) => (variant === 'primary' ? 'black' : 'white')};
+  background: transparent;
+  border: ${({ variant }) =>
+    variant === 'primary' ? '1px solid black' : '1px solid white'};
 `
