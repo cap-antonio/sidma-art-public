@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 
-export const StyledButton = styled.button`
+import { TStyledButton } from './types'
+
+export const StyledButton = styled.button<TStyledButton>`
   background: white;
   color: black;
   padding: 8px;
