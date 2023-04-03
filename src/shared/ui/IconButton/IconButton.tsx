@@ -4,10 +4,10 @@ import * as React from 'react'
 import { StyledIconButton } from './styles'
 import { TIconButton } from './types'
 
-export const IconButton: FC<TIconButton> = ({ onClick, variant }) => {
+export const IconButton: FC<TIconButton> = ({ onClick }) => {
   return (
     <div>
-      <StyledIconButton onClick={onClick} variant={variant} />
+      <StyledIconButton onClick={onClick} variant={'primary'} />
     </div>
   )
 }
