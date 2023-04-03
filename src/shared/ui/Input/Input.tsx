@@ -7,7 +7,7 @@ export const Input: FC<TInput> = ({
   value,
   onChange,
   placeholder,
-  variant,
+  variant = 'primary',
 }) => {
   return (
     <StyledInput
