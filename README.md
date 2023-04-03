@@ -28,7 +28,7 @@ Run the command `yarn` for dependencies installation.
 
 ## Branch name style
 
-Please use this branch name pattern branch_type/DEV-number_of_the_task-brief_description.
+Please use this branch name pattern branch_type/DEV-number-of-the-task-brief-description.
 
 - Example for feature: `feature/DEV-01-add-readme`
 - Example for bug: `bugfix/DEV-02-fix-readme`
