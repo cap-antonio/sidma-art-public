@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+
 import { TInput } from './types'
 
 export const StyledInput = styled.input<TInput>`
