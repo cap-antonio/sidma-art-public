@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import { StyledInput } from './styles'
 import { TInput } from './types'
 
@@ -6,7 +7,7 @@ export const Input: FC<TInput> = ({
   value,
   onChange,
   placeholder,
-  variant,
+  variant = 'primary',
 }) => {
   return (
     <StyledInput
