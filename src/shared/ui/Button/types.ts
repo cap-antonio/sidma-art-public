@@ -1,6 +1,5 @@
 export type TButton = {
-  onClick: () => void
-  title: string
+  onClick?: () => void
   variant?: 'primary' | 'secondary'
 }
 export type TStyledButton = Pick<TButton, 'variant'>

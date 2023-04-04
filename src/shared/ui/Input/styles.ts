@@ -9,8 +9,11 @@ export const StyledInput = styled.input<TInput>`
   padding: 8px;
   font-size: 16px;
   border-radius: 4px;
-  color: ${({ variant }) => (variant === 'primary' ? 'black' : 'white')};
+  color: ${({ variant, theme }) =>
+    variant === 'primary' ? theme.colors.black : theme.colors.white};
   background: transparent;
-  border: ${({ variant }) =>
-    variant === 'primary' ? '1px solid black' : '1px solid white'};
+  border: ${({ variant, theme }) =>
+    `1px solid ${
+      variant === 'primary' ? theme.colors.black : theme.colors.white
+    }`};
 `

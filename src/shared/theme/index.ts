@@ -1,6 +1,13 @@
 import { media } from './breakpoints'
 
+const colors = {
+  black: 'black',
+  white: 'white',
+  brown: '#DEB887',
+}
+
 export const theme = {
+  colors,
   media,
 }
 
