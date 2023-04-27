@@ -1,8 +1,9 @@
 import { FC } from 'react'
 
 import { StyledIconButton } from './styles'
+import { Icon } from '../Icon'
+
 import { TIconButton } from './types'
-import { Icon } from '../Icon/Icon'
 
 export const IconButton: FC<TIconButton> = ({
   onClick,

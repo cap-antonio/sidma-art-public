@@ -12,7 +12,7 @@ export const StyledIconButton = styled.button<TIconButton>`
   transition: 0.25s;
   svg {
     fill: ${({ theme, variant }) =>
-      variant === 'primary' ? theme.colors.black : theme.colors.white};
+      variant === 'primary' ? theme.colors.brown : theme.colors.black};
   }
   background: ${({ variant, theme }) =>
     variant === 'primary' ? theme.colors.white : theme.colors.black};
