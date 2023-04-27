@@ -1,28 +1,17 @@
 import { FC } from 'react'
 
 import { StyledIconButton } from './styles'
-import { Icon } from '../Icon'
-
 import { TIconButton } from './types'
+import { Icon } from '../Icon/Icon'
 
 export const IconButton: FC<TIconButton> = ({
   onClick,
   variant = 'primary',
-  iconName = 'Telegram',
-  iconName2 = 'Instagram',
-  iconName3 = 'ShopBag',
+  iconName = 'Avatar',
 }) => {
   return (
-    <div>
-      <StyledIconButton onClick={onClick} variant={variant}>
-        <Icon name={iconName} />
-      </StyledIconButton>
-      <StyledIconButton onClick={onClick} variant={variant}>
-        <Icon name={iconName2} />
-      </StyledIconButton>
-      <StyledIconButton onClick={onClick} variant={variant}>
-        <Icon name={iconName3} />
-      </StyledIconButton>
-    </div>
+    <StyledIconButton onClick={onClick} variant={variant}>
+      <Icon name={iconName} />
+    </StyledIconButton>
   )
 }
