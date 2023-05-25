@@ -1,11 +1,9 @@
+import { TTextarea } from './types'
 import styled from '@emotion/styled'
 
-import { TInput } from './types'
-
-export const StyledInput = styled.input<TInput>`
-  display: flex;
-  height: 40px;
+export const StyledTextarea = styled.textarea<TTextarea>`
   outline: none;
+  resize: auto;
   padding: 8px;
   margin: ${(props) => props.margin};
   font-size: 16px;

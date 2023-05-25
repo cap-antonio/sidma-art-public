@@ -6,11 +6,16 @@ import { BaseLayout } from 'src/processes'
 import { Pages } from './types'
 
 const MainPage = lazy(() => import('../../pages/MainPage'))
+const ContactsPage = lazy(() => import('../../pages/ContactsPage'))
 
 const routeItems = [
   {
     path: Pages.main,
     element: <MainPage />,
+  },
+  {
+    path: Pages.contacts,
+    element: <ContactsPage />,
   },
 ]
 

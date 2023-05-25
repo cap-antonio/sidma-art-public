@@ -1,3 +1,4 @@
 export enum Pages {
-  main = '/main',
+  main = '/',
+  contacts = '/contacts',
 }

@@ -1,21 +1,21 @@
 import { FC } from 'react'
 
-import { StyledInput } from './styles'
-import { TInput } from './types'
+import { TTextarea } from './types'
+import { StyledTextarea } from './styles'
 
-export const Input: FC<TInput> = ({
+export const Textarea: FC<TTextarea> = ({
   value,
   onChange,
+  margin,
   placeholder,
   variant = 'primary',
-  margin,
 }) => {
   return (
-    <StyledInput
-      variant={variant}
+    <StyledTextarea
       value={value}
       onChange={onChange}
       placeholder={placeholder}
+      variant={variant}
       margin={margin}
     />
   )
