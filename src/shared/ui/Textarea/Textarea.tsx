@@ -1,22 +1,19 @@
 import { FC } from 'react'
 
 import { TTextarea } from './types'
-import { StyledTextarea } from './styles'
+import { StyledTextarea, TextareaWrapper } from './styles'
+import { Label } from '../Label'
 
 export const Textarea: FC<TTextarea> = ({
-  value,
-  onChange,
   margin,
-  placeholder,
   variant = 'primary',
+  label,
+  ...rest
 }) => {
   return (
-    <StyledTextarea
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      variant={variant}
-      margin={margin}
-    />
+    <TextareaWrapper margin={margin}>
+      {label && <Label variant={variant}>{label}</Label>}
+      <StyledTextarea variant={variant} {...rest} />
+    </TextareaWrapper>
   )
 }

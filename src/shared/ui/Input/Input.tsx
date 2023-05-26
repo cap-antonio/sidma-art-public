@@ -1,22 +1,19 @@
 import { FC } from 'react'
 
-import { StyledInput } from './styles'
+import { InputWrapper, StyledInput } from './styles'
 import { TInput } from './types'
+import { Label } from '../Label'
 
 export const Input: FC<TInput> = ({
-  value,
-  onChange,
-  placeholder,
   variant = 'primary',
   margin,
+  label,
+  ...rest
 }) => {
   return (
-    <StyledInput
-      variant={variant}
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      margin={margin}
-    />
+    <InputWrapper margin={margin}>
+      {label && <Label variant={variant}>{label}</Label>}
+      <StyledInput variant={variant} {...rest} />
+    </InputWrapper>
   )
 }

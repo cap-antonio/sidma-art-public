@@ -3,12 +3,12 @@ import styled from '@emotion/styled'
 import { TButton } from './types'
 
 export const StyledButton = styled.button<TButton>`
+  display: block;
+
   background: ${({ theme, variant }) =>
     variant === 'primary' ? theme.colors.white : 'transparent'};
-  color: ${({ theme }) => theme.colors.black};
   color: ${({ theme, variant }) =>
     variant === 'primary' ? theme.colors.black : theme.colors.white};
-  display: block;
   outline: none;
   border: ${({ theme, variant }) =>
     `1px solid ${
@@ -22,11 +22,12 @@ export const StyledButton = styled.button<TButton>`
 
   &:hover {
     background: ${({ theme, variant }) =>
-      variant === 'primary' ? theme.colors.black : 'transparent'};
-    color: ${({ theme }) => theme.colors.white};
+      variant === 'primary' ? theme.colors.black : theme.colors.white};
+    color: ${({ theme, variant }) =>
+      variant === 'primary' ? theme.colors.white : theme.colors.black};
   }
 
   &:active {
-    transform: scale(1.1);
+    transform: scale(0.98);
   }
 `

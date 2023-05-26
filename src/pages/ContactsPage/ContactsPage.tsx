@@ -10,7 +10,7 @@ export const ContactsPage: FC = () => {
       <PageHeader>Контакты</PageHeader>
       <PageBlock>
         <FormWrapper>
-          <Input placeholder="Имя" variant="secondary" margin="8px 0px" />
+          <Input placeholder="Name" variant="secondary" margin="8px 0px" />
           <Input placeholder="email" variant="secondary" margin="8px 0px" />
           <Textarea
             placeholder="Сообщение"
