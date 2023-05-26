@@ -1,7 +1,8 @@
+import { TVariants } from 'src/shared/types'
 import { TIconNames } from '../Icon/types'
 
 export type TIconButton = {
   onClick?: () => void
-  variant?: 'primary' | 'secondary'
+  variant?: TVariants
   iconName?: TIconNames
 }

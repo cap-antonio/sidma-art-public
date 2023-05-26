@@ -1,15 +1,15 @@
 import { ChangeEventHandler } from 'react'
 import { TCSSIndent, TVariants } from 'src/shared/types'
 
-export type TInput = {
+export type TTextarea = {
   value?: string
-  onChange?: ChangeEventHandler<HTMLInputElement>
+  onChange?: ChangeEventHandler
   placeholder?: string
   variant?: TVariants
   margin?: TCSSIndent
   label?: string
 }
 
-export type TStyledInput = Pick<TInput, 'variant'>
+export type TStyledTextarea = Pick<TTextarea, 'variant'>
 
-export type TInputWrapper = Pick<TInput, 'margin'>
+export type TTextareaWrapper = Pick<TTextarea, 'margin'>

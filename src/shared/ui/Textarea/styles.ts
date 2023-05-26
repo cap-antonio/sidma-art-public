@@ -1,11 +1,9 @@
+import { TStyledTextarea, TTextareaWrapper } from './types'
 import styled from '@emotion/styled'
 
-import { TStyledInput, TInputWrapper } from './types'
-
-export const StyledInput = styled.input<TStyledInput>`
-  display: flex;
-
+export const StyledTextarea = styled.textarea<TStyledTextarea>`
   outline: none;
+  resize: vertical;
   padding: 16px;
   font-size: ${({ theme }) => theme.fontSizes.m};
   color: ${({ variant, theme }) =>
@@ -19,11 +17,12 @@ export const StyledInput = styled.input<TStyledInput>`
   &::placeholder {
     color: ${({ variant, theme }) =>
       variant === 'primary' ? theme.colors.black : theme.colors.white};
+
     text-transform: capitalize;
   }
 `
 
-export const InputWrapper = styled.div<TInputWrapper>`
+export const TextareaWrapper = styled.div<TTextareaWrapper>`
   display: flex;
   flex-direction: column;
 
