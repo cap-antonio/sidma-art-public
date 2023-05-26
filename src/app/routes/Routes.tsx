@@ -21,14 +21,14 @@ const routeItems = [
 
 export const AppRoutes: FC = () => {
   return (
-    <Suspense>
-      <BaseLayout>
+    <BaseLayout>
+      <Suspense>
         <Routes>
           {routeItems.map((route, i) => (
             <Route key={route.path + i} {...route} />
           ))}
         </Routes>
-      </BaseLayout>
-    </Suspense>
+      </Suspense>
+    </BaseLayout>
   )
 }
