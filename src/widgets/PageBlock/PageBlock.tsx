@@ -1,10 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
-import { FormWrapper, StyledPageBlock } from './styles'
+import { StyledPageBlock } from './styles'
 
 export const PageBlock: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <StyledPageBlock>
-      <FormWrapper>{children}</FormWrapper>
-    </StyledPageBlock>
-  )
+  return <StyledPageBlock>{children}</StyledPageBlock>
 }

@@ -1,21 +1,26 @@
 import { FC } from 'react'
 
-import { StyledContactsPage } from './styles'
-
 import { Button, Input, Textarea } from 'src/shared/ui'
 import { PageBlock, PageHeader } from 'src/widgets'
+import { StyledContactsPage, FormWrapper } from './styles'
 
 export const ContactsPage: FC = () => {
   return (
     <StyledContactsPage>
       <PageHeader>Контакты</PageHeader>
       <PageBlock>
-        <Input placeholder="Имя" variant="secondary" margin="16px" />
-        <Input placeholder="email" variant="secondary" margin="16px" />
-        <Textarea placeholder="Сообщение" variant="secondary" margin="16px" />
-        <Button variant="secondary" margin="16px">
-          Submit
-        </Button>
+        <FormWrapper>
+          <Input placeholder="Имя" variant="secondary" margin="8px 0px" />
+          <Input placeholder="email" variant="secondary" margin="8px 0px" />
+          <Textarea
+            placeholder="Сообщение"
+            variant="secondary"
+            margin="8px 0px"
+          />
+          <Button variant="secondary" margin="8px 0px">
+            Submit
+          </Button>
+        </FormWrapper>
       </PageBlock>
     </StyledContactsPage>
   )

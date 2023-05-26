@@ -7,11 +7,3 @@ export const StyledPageBlock = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.colors.brown};
 `
-
-export const FormWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 32px;
-  margin: 8px auto;
-  max-width: 400px;
-`
