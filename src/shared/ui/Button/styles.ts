@@ -13,7 +13,7 @@ export const StyledButton = styled.button<TButton>`
       variant === 'primary' ? theme.colors.black : theme.colors.white
     }`};
   padding: 8px 32px;
-  margin: ${(props) => props.margin};
+  margin: ${({ margin }) => margin};
   cursor: pointer;
   transition: 0.25s;
 

@@ -1,8 +1,8 @@
-import { CSSIndent } from 'src/shared/types'
+import { TCSSIndent } from 'src/shared/types'
 
 export type TButton = {
   onClick?: () => void
   variant?: 'primary' | 'secondary'
-  margin: CSSIndent
+  margin?: TCSSIndent
 }
 export type TStyledButton = Pick<TButton, 'variant'>

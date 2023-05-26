@@ -7,7 +7,7 @@ export const StyledInput = styled.input<TInput>`
   height: 40px;
   outline: none;
   padding: 8px;
-  margin: ${(props) => props.margin};
+  margin: ${({ margin }) => margin};
   font-size: 16px;
   border-radius: 4px;
   color: ${({ variant, theme }) =>

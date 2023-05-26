@@ -3,11 +3,11 @@ import { FC } from 'react'
 import { StyledContactsPage } from './styles'
 
 import { Button, Input, Textarea } from 'src/shared/ui'
-import { PageBlock, PageHeader } from 'src/widgets/index'
+import { PageBlock, PageHeader } from 'src/widgets'
 
 export const ContactsPage: FC = () => {
   return (
-    <StyledContactsPage variant="primary">
+    <StyledContactsPage>
       <PageHeader>Контакты</PageHeader>
       <PageBlock>
         <Input placeholder="Имя" variant="secondary" margin="16px" />

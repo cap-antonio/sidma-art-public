@@ -5,7 +5,7 @@ export const StyledTextarea = styled.textarea<TTextarea>`
   outline: none;
   resize: auto;
   padding: 8px;
-  margin: ${(props) => props.margin};
+  margin: ${({ margin }) => margin};
   font-size: 16px;
   border-radius: 4px;
   color: ${({ variant, theme }) =>
