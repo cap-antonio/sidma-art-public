@@ -10,16 +10,10 @@ export const ContactsPage: FC = () => {
       <PageHeader>Контакты</PageHeader>
       <PageBlock>
         <FormWrapper>
-          <Input placeholder="Name" variant="secondary" margin="8px 0px" />
-          <Input placeholder="email" variant="secondary" margin="8px 0px" />
-          <Textarea
-            placeholder="Сообщение"
-            variant="secondary"
-            margin="8px 0px"
-          />
-          <Button variant="secondary" margin="8px 0px">
-            Submit
-          </Button>
+          <Input placeholder="Name" margin="8px 0px" />
+          <Input placeholder="email" margin="8px 0px" />
+          <Textarea placeholder="Сообщение" margin="8px 0px" />
+          <Button margin="8px 0px">Submit</Button>
         </FormWrapper>
       </PageBlock>
     </StyledContactsPage>

@@ -1,23 +1,17 @@
-import { TStyledTextarea, TTextareaWrapper } from './types'
+import { TTextareaWrapper } from './types'
 import styled from '@emotion/styled'
 
-export const StyledTextarea = styled.textarea<TStyledTextarea>`
+export const StyledTextarea = styled.textarea`
   outline: none;
   resize: vertical;
   padding: 16px;
   font-size: ${({ theme }) => theme.fontSizes.m};
-  color: ${({ variant, theme }) =>
-    variant === 'primary' ? theme.colors.black : theme.colors.white};
-  border: ${({ variant, theme }) =>
-    `1px solid ${
-      variant === 'primary' ? theme.colors.black : theme.colors.white
-    }`};
+  color: ${({ theme }) => theme.colors.black};
+  border: ${({ theme }) => `1px solid ${theme.colors.black}`};
   background: transparent;
 
   &::placeholder {
-    color: ${({ variant, theme }) =>
-      variant === 'primary' ? theme.colors.black : theme.colors.white};
-
+    color: ${({ theme }) => theme.colors.black};
     text-transform: capitalize;
   }
 `

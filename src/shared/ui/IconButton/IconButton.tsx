@@ -7,11 +7,10 @@ import { TIconButton } from './types'
 
 export const IconButton: FC<TIconButton> = ({
   onClick,
-  variant = 'primary',
   iconName = 'Avatar',
 }) => {
   return (
-    <StyledIconButton onClick={onClick} variant={variant}>
+    <StyledIconButton onClick={onClick}>
       <Icon name={iconName} />
     </StyledIconButton>
   )

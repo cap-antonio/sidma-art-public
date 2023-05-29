@@ -4,16 +4,11 @@ import { InputWrapper, StyledInput } from './styles'
 import { TInput } from './types'
 import { Label } from '../Label'
 
-export const Input: FC<TInput> = ({
-  variant = 'primary',
-  margin,
-  label,
-  ...rest
-}) => {
+export const Input: FC<TInput> = ({ margin, label, ...rest }) => {
   return (
     <InputWrapper margin={margin}>
-      {label && <Label variant={variant}>{label}</Label>}
-      <StyledInput variant={variant} {...rest} />
+      {label && <Label>{label}</Label>}
+      <StyledInput {...rest} />
     </InputWrapper>
   )
 }

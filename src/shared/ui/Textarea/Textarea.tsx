@@ -4,16 +4,11 @@ import { TTextarea } from './types'
 import { StyledTextarea, TextareaWrapper } from './styles'
 import { Label } from '../Label'
 
-export const Textarea: FC<TTextarea> = ({
-  margin,
-  variant = 'primary',
-  label,
-  ...rest
-}) => {
+export const Textarea: FC<TTextarea> = ({ margin, label, ...rest }) => {
   return (
     <TextareaWrapper margin={margin}>
-      {label && <Label variant={variant}>{label}</Label>}
-      <StyledTextarea variant={variant} {...rest} />
+      {label && <Label>{label}</Label>}
+      <StyledTextarea {...rest} />
     </TextareaWrapper>
   )
 }

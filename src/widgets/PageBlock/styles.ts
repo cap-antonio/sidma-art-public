@@ -5,5 +5,4 @@ export const StyledPageBlock = styled.div`
   justify-content: center;
   height: 600px;
   width: 100%;
-  background: ${({ theme }) => theme.colors.brown};
 `

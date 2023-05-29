@@ -11,22 +11,21 @@ export const StyledIconButton = styled.button<TIconButton>`
   height: 32px;
   transition: 0.25s;
   svg {
-    fill: ${({ theme, variant }) =>
-      variant === 'primary' ? theme.colors.black : theme.colors.white};
+    fill: ${({ theme }) => theme.colors.green};
   }
-  background: ${({ variant, theme }) =>
-    variant === 'primary' ? theme.colors.white : theme.colors.black};
+  background: transparent;
 
   &:hover {
     svg {
-      fill: ${({ theme, variant }) =>
-        variant === 'primary' ? theme.colors.brown : theme.colors.black};
+      fill: ${({ theme }) => theme.colors.greenAccent};
     }
-    background: ${({ variant, theme }) =>
-      variant === 'primary' ? theme.colors.black : theme.colors.white};
   }
 
   &:active {
-    transform: scale(1.1);
+    transform: scale(0.98);
+
+    svg {
+      fill: ${({ theme }) => theme.colors.green};
+    }
   }
 `
