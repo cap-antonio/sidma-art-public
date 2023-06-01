@@ -1,13 +1,16 @@
 import { FC } from 'react'
 
-import { Text } from './styles'
+import { Pages } from 'src/app/routes/types'
 
-import { TLink } from './types'
+import { NavbarContainer, StyledLink } from './styles'
 
-export const Link: FC<TLink> = ({ onClick, title, variant = 'primary' }) => {
+export const NavbarLink: FC = () => {
   return (
-    <Text onClick={onClick} variant={variant}>
-      {title}
-    </Text>
+    <div>
+      <NavbarContainer>
+        <StyledLink to={Pages.main}>Main Page</StyledLink>
+        <StyledLink to={Pages.shop}>Shop Page</StyledLink>
+      </NavbarContainer>
+    </div>
   )
 }

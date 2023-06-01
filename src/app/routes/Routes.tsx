@@ -7,10 +7,16 @@ import { Pages } from './types'
 
 const MainPage = lazy(() => import('../../pages/MainPage'))
 
+const ShopPage = lazy(() => import('../../pages/ShopPage'))
+
 const routeItems = [
   {
     path: Pages.main,
     element: <MainPage />,
+  },
+  {
+    path: Pages.shop,
+    element: <ShopPage />,
   },
 ]
 

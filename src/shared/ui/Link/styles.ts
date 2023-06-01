@@ -1,14 +1,12 @@
 import styled from '@emotion/styled'
+import { Link } from 'react-router-dom'
 
-import { TStyledLink } from './types'
-
-export const Container = styled.div`
+export const NavbarContainer = styled.nav`
   align-items: center;
   display: flex;
-  text-decoration: none;
   justify-content: center;
 `
-export const Text = styled.div<TStyledLink>`
+export const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
   padding: 8px;
@@ -16,6 +14,5 @@ export const Text = styled.div<TStyledLink>`
 
   &:hover {
     color: brown;
-    text-decoration: none;
   }
 `
