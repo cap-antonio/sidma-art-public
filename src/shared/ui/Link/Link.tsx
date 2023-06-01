@@ -1,16 +1,9 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
-import { Pages } from 'src/app/routes/types'
+import { StyledLink } from './styles'
 
-import { NavbarContainer, StyledLink } from './styles'
+import { TLink } from './types'
 
-export const NavbarLink: FC = () => {
-  return (
-    <div>
-      <NavbarContainer>
-        <StyledLink to={Pages.main}>Main Page</StyledLink>
-        <StyledLink to={Pages.shop}>Shop Page</StyledLink>
-      </NavbarContainer>
-    </div>
-  )
+export const Link: FC<PropsWithChildren<TLink>> = ({ to, children }) => {
+  return <StyledLink to={to}>{children}</StyledLink>
 }
