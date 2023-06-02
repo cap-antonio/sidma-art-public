@@ -5,6 +5,7 @@ export const StyledTextarea = styled.textarea`
   outline: none;
   resize: vertical;
   padding: 16px;
+
   font-size: ${({ theme }) => theme.fontSizes.m};
   color: ${({ theme }) => theme.colors.black};
   border: ${({ theme }) => `1px solid ${theme.colors.black}`};
