@@ -1,5 +1,3 @@
-import { media } from './breakpoints'
-
 const colors = {
   black: 'black',
   white: 'white',
@@ -20,14 +18,28 @@ const heights = {
   header: '40px',
 }
 
+const breakpoints = {
+  sm: 480,
+  md: 768,
+  lg: 960,
+  xl: 1140,
+  xxl: 1600,
+}
+
+export const media = {
+  sm: `@media (max-width: ${breakpoints.sm}px)`,
+  md: `@media (max-width: ${breakpoints.md}px)`,
+  lg: `@media (max-width: ${breakpoints.lg}px)`,
+  xl: `@media (max-width: ${breakpoints.xl}px)`,
+  xxl: `@media (max-width: ${breakpoints.xxl}px)`,
+}
+
 export const theme = {
   colors,
-  media,
   fontSizes,
   heights,
   fontFamily,
+  breakpoints,
 }
 
 export type Theme = typeof theme
-
-export * from './breakpoints'
