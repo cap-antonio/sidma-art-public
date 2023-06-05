@@ -4,7 +4,7 @@ import { ModalState } from './types'
 
 const initialState: ModalState = {
   drawer: {
-    isOpen: true,
+    isOpen: false,
     content: 'headerLinks',
   },
 }

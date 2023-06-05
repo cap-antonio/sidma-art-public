@@ -32,6 +32,8 @@ export const DrawerHeader = styled.div`
 export const DrawerBody = styled.div`
   padding: 32px;
 
+  white-space: nowrap;
+
   ${media.sm} {
     padding: 16px;
   }
