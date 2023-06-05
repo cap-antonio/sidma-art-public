@@ -5,7 +5,7 @@ import { theme } from '../shared/theme'
 import { AppRoutes } from './routes'
 import './i18n'
 import { globalStyles } from './globalStyles'
-import { store } from './store'
+import { store } from 'src/shared/store'
 
 export const App = () => {
   return (

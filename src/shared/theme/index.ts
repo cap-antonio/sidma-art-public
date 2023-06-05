@@ -1,10 +1,10 @@
 const colors = {
   black: 'black',
   white: 'white',
-  brown: '#DEB887',
   mainGray: '#E8E6E6',
   green: '#c8cfc6',
   greenAccent: '#b7bdb5',
+  violet: '#8C7284',
 }
 
 const fontSizes = {
@@ -26,6 +26,11 @@ const breakpoints = {
   xxl: 1600,
 }
 
+const zIndexes = {
+  drawer: 50,
+  modal: 100,
+}
+
 export const media = {
   sm: `@media (max-width: ${breakpoints.sm}px)`,
   md: `@media (max-width: ${breakpoints.md}px)`,
@@ -40,6 +45,7 @@ export const theme = {
   heights,
   fontFamily,
   breakpoints,
+  zIndexes,
 }
 
 export type Theme = typeof theme
