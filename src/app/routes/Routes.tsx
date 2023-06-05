@@ -7,6 +7,7 @@ import { Pages } from './types'
 
 const MainPage = lazy(() => import('../../pages/MainPage'))
 const ContactsPage = lazy(() => import('../../pages/ContactsPage'))
+const ShopPage = lazy(() => import('../../pages/ShopPage'))
 
 const routeItems = [
   {
@@ -16,6 +17,10 @@ const routeItems = [
   {
     path: Pages.contacts,
     element: <ContactsPage />,
+  },
+  {
+    path: Pages.shop,
+    element: <ShopPage />,
   },
 ]
 
