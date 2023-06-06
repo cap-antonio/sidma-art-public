@@ -5,7 +5,7 @@ export const StyledPageHeader = styled.div`
   justify-content: center;
 
   width: 100%;
-  padding: 16px 0;
+  padding: 32px 0;
   color: ${({ theme }) => theme.colors.black};
   text-align: center;
   font-size: ${({ theme }) => theme.fontSizes.l};
