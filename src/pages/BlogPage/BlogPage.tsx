@@ -6,7 +6,6 @@ export const BlogPage: FC = () => {
   return (
     <StyledBlogPage>
       <PageHeader>Блог</PageHeader>
-      Blog content
     </StyledBlogPage>
   )
 }
