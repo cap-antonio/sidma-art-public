@@ -19,9 +19,9 @@ If a new component is called `SomeComponent`, then you should create a folder
 with the same name `SomeComponent`, which will contain:
 
 - `SomeComponent.tsx` which contain a new component
-- `styles.ts` with styles for the particular component
-- `types.ts` with types for the particular component
-- `hooks.ts` with hooks for the particular component
+- `styles.ts` with styles for the particular component (optional)
+- `types.ts` with types for the particular component (optional)
+- `hooks.ts` with hooks for the particular component (optional)
 - `index.ts` for exporting staff you need from this folder
 
 ## Component decomposition
