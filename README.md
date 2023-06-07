@@ -25,6 +25,7 @@ Run the command `yarn` for dependencies installation.
 
 - [Types](docs/types.md)
 - [Component organizations](docs/components.md)
+- [Modules organizations](docs/modules.md)
 
 ## Branch name style
 
