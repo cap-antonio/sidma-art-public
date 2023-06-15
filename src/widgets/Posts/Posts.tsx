@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Container, PostsWrapper, SecondaryColumn } from './styles'
-import { SecondaryPost, LatestPost, AnotherPost } from './postKinds'
+import { SecondaryPost, LatestPost, AnotherPost } from 'src/features'
 
 const mockPost = {
   id: 1,
