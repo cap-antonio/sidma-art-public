@@ -2,10 +2,17 @@ import styled from '@emotion/styled'
 import { media } from 'src/shared/theme'
 
 export const StyledLatestPost = styled.div`
-  height: 500px;
+  height: 700px;
 
+  overflow: hidden;
   background: pink;
   width: calc(50% - 4px);
+
+  ${media.lg} {
+    width: 100%;
+    height: 400px;
+  }
+
   ${media.md} {
     width: 100%;
     height: 400px;

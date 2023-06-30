@@ -1,3 +1,3 @@
-import { TFeed } from 'src/widgets/Feed/Feed'
+import { TPost } from 'src/shared/api'
 
-export type TSecondaryPost = TFeed
+export type TSecondaryPost = TPost

@@ -17,9 +17,9 @@ export const LatestPost: FC<TLatestPost> = ({
       <ImageHandler
         url={img.url}
         alt={img.alt}
-        height={''}
-        width={'100%'} //463px
-        objectFit={'contain'}
+        height={'60%'}
+        width={'100%'}
+        objectFit={'cover'}
       />
 
       <div> {author.name}</div>

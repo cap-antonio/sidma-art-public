@@ -2,36 +2,43 @@ import styled from '@emotion/styled'
 import { media } from 'src/shared/theme'
 
 export const StyledSecondaryPost = styled.div`
-  height: 33%;
+  display: flex;
 
+  height: 33%;
   background: lightgreen;
+  overflow: hidden;
+
+  ${media.lg} {
+    flex-direction: column;
+
+    height: 400px;
+    width: 33%;
+
+    img {
+      width: 100%;
+      min-height: 150px;
+      height: 150px;
+    }
+  }
 
   ${media.md} {
     height: 300px;
-    width: 33%;
+    width: calc(33% - 4px);
   }
 
   ${media.sm} {
-    height: 200px;
+    height: 300px;
     width: 100%;
   }
 `
 
 export const SecondaryColumnForContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 4px;
-  width: calc(50% - 4px);
-  gap: 8px;
-`
-export const StyledWrapper = styled.h1`
-  color: ${({ theme }) => theme.colors.black};
-  font-size: 8px;
+  display: block;
+  margin: 8px;
 `
 
 export const StyledTags = styled.div`
   display: flex;
-  flex-direction: row;
 
   Button {
     justify-content: center;

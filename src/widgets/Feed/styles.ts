@@ -32,11 +32,16 @@ export const SecondaryColumn = styled.div`
   width: calc(50% - 4px);
   gap: 8px;
 
+  ${media.lg} {
+    flex-direction: row;
+
+    width: 100%;
+  }
+
   ${media.md} {
     flex-direction: row;
 
     width: 100%;
-    height: 300px;
   }
 
   ${media.sm} {

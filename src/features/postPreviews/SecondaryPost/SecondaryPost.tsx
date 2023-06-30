@@ -7,7 +7,6 @@ import {
 } from './styles'
 
 import { TSecondaryPost } from './types'
-import { StyledWrapper } from '../LatestPost/styles'
 import { Button, ImageHandler } from 'src/shared/ui'
 
 export const SecondaryPost: FC<TSecondaryPost> = ({
@@ -22,15 +21,15 @@ export const SecondaryPost: FC<TSecondaryPost> = ({
       <ImageHandler
         url={img.url}
         alt={img.alt}
-        height="230px"
-        width="230px"
+        height="100%"
+        width="40%"
         objectFit={'cover'}
       />
 
       <SecondaryColumnForContent>
-        <div> {author.name}</div>
-        <StyledWrapper>{title}</StyledWrapper>
-        {text.substring(0, 150)}
+        <div>{author.name}</div>
+        <div>{title}</div>
+        <div>{text.substring(0, 150)}</div>
         <StyledTags>
           <Button>{tags[0]}</Button>
           <Button>{tags[1]}</Button>
