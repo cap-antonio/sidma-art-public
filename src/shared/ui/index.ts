@@ -1,6 +1,7 @@
 export * from './Input'
 export * from './Button'
 export * from './IconButton'
+export * from './IconBurger'
 export * from './Icon'
 export * from './Textarea'
 export * from './Label'

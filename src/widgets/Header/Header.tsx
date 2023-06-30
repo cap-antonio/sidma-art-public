@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { StyledHeader } from './styles'
 
-import { Link } from 'src/shared/ui'
+import { IconBurger, Link } from 'src/shared/ui'
 import { Pages } from 'src/app/routes/types'
 
 const links = [
@@ -25,12 +25,15 @@ const links = [
 
 export const Header: FC = () => {
   return (
-    <StyledHeader>
-      {links.map(({ path, title }) => (
-        <Link key={path} to={path}>
-          {title}
-        </Link>
-      ))}
-    </StyledHeader>
+    <>
+      <StyledHeader>
+        {links.map(({ path, title }) => (
+          <Link key={path} to={path}>
+            {title}
+          </Link>
+        ))}
+        <IconBurger />
+      </StyledHeader>
+    </>
   )
 }
