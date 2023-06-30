@@ -10,7 +10,7 @@ const mockPost = {
   source: 'instagram',
   tags: ['art', 'idea', 'design'],
   author: {
-    name: 'Author name',
+    name: 'Dude Lebovsky',
     role: 'artist',
   },
   img: {
@@ -19,18 +19,18 @@ const mockPost = {
   },
 }
 
-export type TPost = typeof mockPost
+export type TFeed = typeof mockPost
 
-const posts = [
+const mockPosts = [
   {
     id: 1,
     title: 'What is Lorem Ipsum?',
     text: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
     date: 1686137522,
     source: 'instagram',
-    tags: ['art', 'idea', 'design'],
+    tags: ['art', 'idea', 'design', 'insta'],
     author: {
-      name: 'Author name',
+      name: 'Arkadiy Levandovski',
       role: 'artist',
     },
     img: {
@@ -184,12 +184,12 @@ const posts = [
   },
 ]
 
-type TDevidedPosts = {
-  latest: TPost
-} & Record<'other' | 'seconds', Array<TPost>>
+type TDividedFeed = {
+  latest: TFeed
+} & Record<'other' | 'seconds', Array<TFeed>>
 
-export const Posts: FC = () => {
-  const { latest, other, seconds } = posts.reduce<TDevidedPosts>(
+export const Feed: FC = () => {
+  const { latest, other, seconds } = mockPosts.reduce<TDividedFeed>(
     (res, curr, i) => {
       if (i === 0) {
         res['latest'] = curr

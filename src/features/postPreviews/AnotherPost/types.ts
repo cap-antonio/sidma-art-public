@@ -1,3 +1,3 @@
-import { TPost } from 'src/widgets/Posts/Posts'
+import { TFeed } from 'src/widgets/Feed/Feed'
 
-export type TAnotherPost = TPost
+export type TAnotherPost = TFeed

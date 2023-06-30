@@ -12,7 +12,7 @@ export const PostsWrapper = styled.div`
   justify-content: flex-start;
 
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   padding: 16px;
   gap: 8px;
 
