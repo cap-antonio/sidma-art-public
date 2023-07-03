@@ -44,11 +44,11 @@ export const CloseButtonWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  position: absolute;
-  right: 0;
+  margin-inline: 8px;
 
-  margin: 0 16px;
-  height: inherit;
-  width: 32px;
-  height: 32px;
+  ${media.md} {
+    display: flex;
+
+    margin-left: auto;
+  }
 `

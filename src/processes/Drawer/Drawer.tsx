@@ -25,7 +25,6 @@ export const Drawer: FC = () => {
   return (
     <StyledDrawer isOpen={isOpen}>
       <DrawerHeader>
-        {/* TODO: replace X with IconButton that will use close icon */}
         <CloseButtonWrapper>
           <IconButton iconName="Close" onClick={closeDrawer} />
         </CloseButtonWrapper>
