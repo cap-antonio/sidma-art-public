@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import { StyledHeader } from './styles'
+import { BurgerWrapper, LinkWrapper, StyledHeader } from './styles'
 
 import { IconButton, Link } from 'src/shared/ui'
 import { Pages } from 'src/app/routes/types'
-import { toggleDrawer, useDispatch } from 'src/shared/store'
+import { onToggleDrawer, useDispatch } from 'src/shared/store'
 
 const links = [
   {
@@ -26,18 +26,20 @@ const links = [
 
 export const Header: FC = () => {
   const dispatch = useDispatch()
-  const openDrawer = () => dispatch(toggleDrawer())
+  const openDrawer = () => dispatch(onToggleDrawer())
 
   return (
-    <>
-      <StyledHeader>
+    <StyledHeader>
+      <LinkWrapper>
         {links.map(({ path, title }) => (
           <Link key={path} to={path}>
             {title}
           </Link>
         ))}
+      </LinkWrapper>
+      <BurgerWrapper>
         <IconButton iconName="Burger" onClick={openDrawer} />
-      </StyledHeader>
-    </>
+      </BurgerWrapper>
+    </StyledHeader>
   )
 }

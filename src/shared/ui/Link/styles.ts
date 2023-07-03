@@ -10,8 +10,4 @@ export const StyledLink = styled(Link)`
   &:hover {
     color: brown;
   }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 `
