@@ -8,6 +8,10 @@ export const StyledHeader = styled.nav`
 
   height: ${({ theme }) => theme.heights.header};
   box-shadow: 0px 0px 10px black;
+
+  ${media.md} {
+    justify-content: space-between;
+  }
 `
 export const LinkWrapper = styled.div`
   ${media.md} {
@@ -19,28 +23,11 @@ export const BurgerWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  position: absolute;
-  right: 0;
+  margin-inline: 8px;
 
-  svg {
-    fill: ${({ theme }) => theme.colors.green};
-  }
-  background: transparent;
-
-  &:hover {
-    svg {
-      fill: ${({ theme }) => theme.colors.greenAccent};
-    }
-  }
-
-  &:active {
-    transform: scale(0.98);
-
-    svg {
-      fill: ${({ theme }) => theme.colors.green};
-    }
-  }
   ${media.md} {
     display: flex;
+
+    margin-left: auto;
   }
 `

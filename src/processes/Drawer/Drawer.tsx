@@ -7,7 +7,7 @@ import {
   StyledDrawer,
 } from './styles'
 
-import { onToggleDrawer, useDispatch, useSelector } from 'src/shared/store'
+import { toggleDrawer, useDispatch, useSelector } from 'src/shared/store'
 import { TDrawerContent } from 'src/shared/store/modules/modal/types'
 import { HeaderLinks } from './contents'
 import { IconButton } from 'src/shared/ui'
@@ -20,7 +20,7 @@ export const Drawer: FC = () => {
   const isOpen = useSelector((state) => state.modal.drawer.isOpen)
   const content = useSelector((state) => state.modal.drawer.content)
   const dispatch = useDispatch()
-  const closeDrawer = () => dispatch(onToggleDrawer())
+  const closeDrawer = () => dispatch(toggleDrawer())
 
   return (
     <StyledDrawer isOpen={isOpen}>
