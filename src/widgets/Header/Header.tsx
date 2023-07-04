@@ -5,7 +5,7 @@ import { IconButton, Link } from 'src/shared/ui'
 import { Pages } from 'src/app/routes/types'
 import { toggleDrawer, useDispatch } from 'src/shared/store'
 
-const links = [
+export const links = [
   {
     path: Pages.main,
     title: 'Main',

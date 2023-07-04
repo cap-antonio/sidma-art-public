@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const HeaderLinkWrapper = styled.div`
+export const StyledHeaderLink = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
