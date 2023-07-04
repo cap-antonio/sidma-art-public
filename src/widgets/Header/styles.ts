@@ -13,11 +13,6 @@ export const StyledHeader = styled.nav`
     justify-content: space-between;
   }
 `
-export const LinkWrapper = styled.div`
-  ${media.md} {
-    display: none;
-  }
-`
 export const BurgerWrapper = styled.div`
   display: none;
   align-items: center;

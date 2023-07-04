@@ -9,11 +9,11 @@ import {
 
 import { toggleDrawer, useDispatch, useSelector } from 'src/shared/store'
 import { TDrawerContent } from 'src/shared/store/modules/modal/types'
-import { HeaderLinks } from './contents'
 import { IconButton } from 'src/shared/ui'
+import { NavigationLinks } from 'src/entities'
 
 const contents: Record<TDrawerContent, JSX.Element> = {
-  headerLinks: <HeaderLinks />,
+  headerLinks: <NavigationLinks kind="drawer" />,
 }
 
 export const Drawer: FC = () => {

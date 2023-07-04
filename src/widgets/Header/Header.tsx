@@ -1,28 +1,9 @@
 import { FC } from 'react'
-import { BurgerWrapper, LinkWrapper, StyledHeader } from './styles'
+import { BurgerWrapper, StyledHeader } from './styles'
 
-import { IconButton, Link } from 'src/shared/ui'
-import { Pages } from 'src/app/routes/types'
+import { IconButton } from 'src/shared/ui'
 import { toggleDrawer, useDispatch } from 'src/shared/store'
-
-export const links = [
-  {
-    path: Pages.main,
-    title: 'Main',
-  },
-  {
-    path: Pages.shop,
-    title: 'Shop',
-  },
-  {
-    path: Pages.contacts,
-    title: 'Contacts',
-  },
-  {
-    path: Pages.blog,
-    title: 'Blog',
-  },
-]
+import { NavigationLinks } from 'src/entities'
 
 export const Header: FC = () => {
   const dispatch = useDispatch()
@@ -30,13 +11,7 @@ export const Header: FC = () => {
 
   return (
     <StyledHeader>
-      <LinkWrapper>
-        {links.map(({ path, title }) => (
-          <Link key={path} to={path}>
-            {title}
-          </Link>
-        ))}
-      </LinkWrapper>
+      <NavigationLinks />
       <BurgerWrapper>
         <IconButton iconName="Burger" onClick={openDrawer} />
       </BurgerWrapper>
