@@ -3,8 +3,11 @@ import styled from '@emotion/styled'
 import { TIconButton } from './types'
 
 export const StyledIconButton = styled.button<TIconButton>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   cursor: pointer;
-  display: block;
   border-radius: 100%;
   border: none;
   width: 32px;
