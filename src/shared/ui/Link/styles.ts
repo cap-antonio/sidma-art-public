@@ -8,6 +8,6 @@ export const StyledLink = styled(Link)`
   margin: 8px;
 
   &:hover {
-    color: brown;
+    color: ${({ theme }) => theme.colors.green};
   }
 `
