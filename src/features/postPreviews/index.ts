@@ -1,3 +1,3 @@
 export * from './AnotherPost'
-export * from './LatestPost'
+export * from './FirstPost'
 export * from './SecondaryPost'

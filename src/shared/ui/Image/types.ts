@@ -1,4 +1,4 @@
-export type TImageHandler = {
+export type TImage = {
   alt: string
   url: string
   height?: string
@@ -6,4 +6,4 @@ export type TImageHandler = {
   objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
 }
 
-export type TStyledImage = Omit<TImageHandler, 'url' | 'alt'>
+export type TStyledImage = Omit<TImage, 'url' | 'alt'>

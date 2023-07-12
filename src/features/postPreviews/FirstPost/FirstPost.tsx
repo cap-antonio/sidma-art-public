@@ -1,14 +1,14 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { StyledSecondaryPost } from './styles'
+import { StyledFirstPost } from './styles'
+import { Title, Tag, Meta, TextPreview } from '../styles'
 import { Flex, Image } from 'src/shared/ui'
-import { Meta, Tag, TextPreview, Title } from '../styles'
 import { formatDate } from 'src/shared/utils'
 
-import { TSecondaryPost } from './types'
+import { TLatestPost } from './types'
 
-export const SecondaryPost: FC<TSecondaryPost> = ({
+export const FirstPost: FC<TLatestPost> = ({
   text,
   title,
   img,
@@ -20,12 +20,12 @@ export const SecondaryPost: FC<TSecondaryPost> = ({
     i18n: { language },
   } = useTranslation()
   return (
-    <StyledSecondaryPost>
+    <StyledFirstPost>
       <Image
         url={img.url}
         alt={img.alt}
-        height="100%"
-        width="40%"
+        height={'70%'}
+        width={'100%'}
         objectFit={'cover'}
       />
 
@@ -35,6 +35,7 @@ export const SecondaryPost: FC<TSecondaryPost> = ({
           <span>&#8226;</span>
           <Meta>{formatDate(published, language)}</Meta>
         </Flex>
+
         <Title>{title}</Title>
         <TextPreview>{`${text.substring(0, 150)}...`}</TextPreview>
         <Flex wrap>
@@ -43,6 +44,6 @@ export const SecondaryPost: FC<TSecondaryPost> = ({
           ))}
         </Flex>
       </Flex>
-    </StyledSecondaryPost>
+    </StyledFirstPost>
   )
 }

@@ -5,9 +5,11 @@ export const prepareBloggerResponseToPost = (
 ): TPost => {
   const description = post.content.match(/<div[^>]*>(.*?)<\/div>/)?.[1] || ''
   const tagsMatches = post.content.match(/#\w+/g) || undefined
-  const tags = tagsMatches ? ['blogger', ...tagsMatches] : []
+  const tags = tagsMatches
+    ? tagsMatches.map((tag) => tag.charAt(1).toUpperCase() + tag.slice(2))
+    : []
 
-  const title = post.title || description.slice(0, 150)
+  const title = post.title || description.slice(0, 15)
 
   return {
     id: post.id,
@@ -15,7 +17,7 @@ export const prepareBloggerResponseToPost = (
     text: description,
     source: 'blogger',
     tags,
-    published: post.published,
+    published: post.updated,
     author: {
       name: post.author.displayName,
       avatar: `https:${post.author.image.url}`,

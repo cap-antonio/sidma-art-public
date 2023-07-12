@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import { StyledAnotherPost, Tags } from './styles'
-import { Button, ImageHandler } from 'src/shared/ui'
+import { Button, Image } from 'src/shared/ui'
 
 import { TAnotherPost } from './types'
 
@@ -14,7 +14,7 @@ export const AnotherPost: FC<TAnotherPost> = ({
 }) => {
   return (
     <StyledAnotherPost>
-      <ImageHandler
+      <Image
         url={img.url}
         alt={img.alt}
         width={'100%'}
