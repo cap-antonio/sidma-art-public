@@ -2,8 +2,7 @@ import { FC, Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import { BaseLayout } from 'src/processes'
-
-import { Pages } from './types'
+import { Pages } from 'src/shared/types'
 
 const MainPage = lazy(() => import('../../pages/MainPage'))
 const ContactsPage = lazy(() => import('../../pages/ContactsPage'))

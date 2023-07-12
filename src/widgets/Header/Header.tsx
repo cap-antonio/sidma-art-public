@@ -1,36 +1,20 @@
 import { FC } from 'react'
-import { StyledHeader } from './styles'
+import { BurgerWrapper, StyledHeader } from './styles'
 
-import { Link } from 'src/shared/ui'
-import { Pages } from 'src/app/routes/types'
-
-const links = [
-  {
-    path: Pages.main,
-    title: 'Main',
-  },
-  {
-    path: Pages.shop,
-    title: 'Shop',
-  },
-  {
-    path: Pages.contacts,
-    title: 'Contacts',
-  },
-  {
-    path: Pages.blog,
-    title: 'Blog',
-  },
-]
+import { IconButton } from 'src/shared/ui'
+import { toggleDrawer, useDispatch } from 'src/shared/store'
+import { NavigationLinks } from 'src/entities'
 
 export const Header: FC = () => {
+  const dispatch = useDispatch()
+  const openDrawer = () => dispatch(toggleDrawer())
+
   return (
     <StyledHeader>
-      {links.map(({ path, title }) => (
-        <Link key={path} to={path}>
-          {title}
-        </Link>
-      ))}
+      <NavigationLinks />
+      <BurgerWrapper>
+        <IconButton iconName="Burger" onClick={openDrawer} />
+      </BurgerWrapper>
     </StyledHeader>
   )
 }
