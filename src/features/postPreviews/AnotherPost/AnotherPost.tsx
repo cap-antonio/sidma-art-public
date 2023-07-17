@@ -1,9 +1,12 @@
 import { FC } from 'react'
 
-import { StyledAnotherPost, Tags } from './styles'
-import { Button, Image } from 'src/shared/ui'
+import { StyledAnotherPost } from './styles'
+import { Tag, Meta, Title, TextPreview } from '../styles'
+import { Flex, Image } from 'src/shared/ui'
 
 import { TAnotherPost } from './types'
+import { formatDate } from 'src/shared/utils'
+import { useTranslation } from 'react-i18next'
 
 export const AnotherPost: FC<TAnotherPost> = ({
   tags,
@@ -11,7 +14,11 @@ export const AnotherPost: FC<TAnotherPost> = ({
   title,
   img,
   author,
+  published,
 }) => {
+  const {
+    i18n: { language },
+  } = useTranslation()
   return (
     <StyledAnotherPost>
       <Image
@@ -22,18 +29,23 @@ export const AnotherPost: FC<TAnotherPost> = ({
         objectFit={'cover'}
       />
 
-      {/* TODO: add styles to aurhor */}
-      <div>{author.name}</div>
-      {/* TODO: add styles to title */}
-      <div>{title}</div>
-      {/* TODO: add styles to text */}
-      {`${text.substring(0, 150)}` + '...'}
+      <Flex direction="column" padding="8px">
+        <Flex>
+          <Meta>{author.name}</Meta>
 
-      <Tags>
-        <Button margin="8px 0px">#{tags[0]}</Button>
-        <Button margin="8px 0px">#{tags[1]}</Button>
-        <Button margin="8px 0px">#{tags[2]}</Button>
-      </Tags>
+          <span>&#8226;</span>
+          <Meta>{formatDate(published, language)}</Meta>
+        </Flex>
+
+        <Title>{title}</Title>
+        <TextPreview>{`${text.substring(0, 150)}` + '...'}</TextPreview>
+
+        <Flex wrap>
+          {tags.map((tag, i) => (
+            <Tag key={tag + i}>{tag}</Tag>
+          ))}
+        </Flex>
+      </Flex>
     </StyledAnotherPost>
   )
 }

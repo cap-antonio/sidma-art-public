@@ -1,3 +1,3 @@
 import { TPost } from 'src/shared/api'
 
-export type TLatestPost = TPost
+export type TFirstPost = TPost
