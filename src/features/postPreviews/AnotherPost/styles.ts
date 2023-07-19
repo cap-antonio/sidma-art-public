@@ -3,7 +3,6 @@ import { media } from 'src/shared/theme'
 
 export const StyledAnotherPost = styled.div`
   cursor: pointer;
-  height: 400px;
   width: calc(33% - 4px);
 
   overflow: hidden;
