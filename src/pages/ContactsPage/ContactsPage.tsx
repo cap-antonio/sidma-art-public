@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import { Button, Input, Textarea } from 'src/shared/ui'
-import { PageBlock, PageHeader } from 'src/widgets'
+import { PageBlock, PageHeader } from 'src/entities'
 import { StyledContactsPage, FormWrapper } from './styles'
 
 export const ContactsPage: FC = () => {
