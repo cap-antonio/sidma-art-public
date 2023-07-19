@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { StyledFirstPost } from './styles'
 import { Title, Tag, Meta, TextPreview } from '../styles'
 import { Flex, Image } from 'src/shared/ui'
-import { formatDate } from 'src/shared/utils' //why, analise changes
+import { formatDate } from 'src/shared/utils'
 
 import { TFirstPost } from './types'
 
