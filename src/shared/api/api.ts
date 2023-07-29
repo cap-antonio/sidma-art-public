@@ -1,6 +1,6 @@
 import { createApi, fakeBaseQuery } from '@reduxjs/toolkit/query/react'
 import axios from 'axios'
-import { TGoogleBlogFeedResponse, TPost } from './types'
+import { TBloggerPostsResponse, TGoogleBlogFeedResponse, TPost } from './types'
 import { prepareBloggerResponseToPost } from './helpers'
 
 const googleApiKeyBlogger = 'AIzaSyDfoaKPFJF8XbjLBQPVcWWeRiftgRmNjss'
@@ -10,7 +10,7 @@ export const baseApi = createApi({
   baseQuery: fakeBaseQuery(),
   reducerPath: 'baseApi',
   endpoints: (builder) => ({
-    fetchFeed: builder.query<Array<TPost>, unknown>({
+    fetchFeed: builder.query<Array<TPost>, void>({
       async queryFn() {
         const { data: blogResp } = await axios.get<TGoogleBlogFeedResponse>(
           `https://www.googleapis.com/blogger/v3/blogs/${googleBloggerId}/posts?key=${googleApiKeyBlogger}`,
@@ -27,7 +27,16 @@ export const baseApi = createApi({
         return { data: [...blogPosts, ...blogPosts, ...blogPosts] }
       },
     }),
+    fetchPost: builder.query<TPost, string>({
+      async queryFn(id) {
+        const { data: blogResp } = await axios.get<TBloggerPostsResponse>(
+          `https://www.googleapis.com/blogger/v3/blogs/${googleBloggerId}/posts/${id}?key=${googleApiKeyBlogger}`,
+        )
+
+        return { data: prepareBloggerResponseToPost(blogResp) }
+      },
+    }),
   }),
 })
 
-export const { useFetchFeedQuery } = baseApi
+export const { useFetchFeedQuery, useFetchPostQuery } = baseApi
