@@ -26,6 +26,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install deps
-        run: npm ci
+        run: npm i
       - name: Typescript check
         run: npm run ts-check
