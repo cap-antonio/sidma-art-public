@@ -1,10 +1,6 @@
 name: Check project
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is creating a new pull request 🚀
 on:
-  push:
-    branches:
-      - 'master'
-      - 'dev'
   pull_request:
     branches:
       - 'master'
