@@ -1,0 +1,31 @@
+name: Check project
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push:
+    branches:
+      - 'master'
+      - 'dev'
+  pull_request:
+    branches:
+      - 'master'
+      - 'dev'
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - naem: Install deps
+        run: npm ci
+      - name: Lint check
+        run: npm run lint
+  ts-check:
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - naem: Install deps
+        run: npm ci
+      - name: Typescript check
+        run: npm run ts-check
