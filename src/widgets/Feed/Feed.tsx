@@ -23,7 +23,7 @@ const mockPost: TPost = {
 }
 
 export const Feed: FC = () => {
-  const { data, isLoading } = useFetchFeedQuery({})
+  const { data, isLoading } = useFetchFeedQuery()
 
   const { latest, other, seconds } = (data || []).reduce<TDevidedPosts>(
     (res, curr, i) => {
