@@ -10,4 +10,5 @@ export enum Pages {
   contacts = '/contacts',
   shop = '/shop',
   blog = '/blog',
+  blogPost = '/blog/:postId',
 }
