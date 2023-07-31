@@ -2,7 +2,7 @@ import React from 'react'
 
 export const TrashIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
-    <image>
+    <picture>
       <svg
         width="16"
         height="16"
@@ -18,6 +18,6 @@ export const TrashIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
           fill="current"
         />
       </svg>
-    </image>
+    </picture>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Instagram: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <image>
+  <picture>
     <svg
       fill="#000000"
       width="24px"
@@ -26,5 +26,5 @@ export const Instagram: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         transform="  matrix(1 0 0 1 0 0) "
       />
     </svg>
-  </image>
+  </picture>
 )
