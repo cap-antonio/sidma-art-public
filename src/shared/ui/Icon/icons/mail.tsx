@@ -18,21 +18,6 @@ export const MailIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
           points="165.001,146.4 310.087,40.001 19.911,40 	"
         />
       </g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
     </svg>
   </picture>
 )

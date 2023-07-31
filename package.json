@@ -45,7 +45,9 @@
     "prepare": "husky install",
     "new:component": "hygen component new && prettier --write './src/components/index.ts'",
     "new:page": "hygen page new",
-    "new:hook": "hygen hook new && prettier --write './src/hooks/index.ts'"
+    "new:hook": "hygen hook new && prettier --write './src/hooks/index.ts'",
+    "lint": "eslint src",
+    "ts-check": "tsc --pretty --noEmit --incremental false"
   },
   "eslintConfig": {
     "extends": [
