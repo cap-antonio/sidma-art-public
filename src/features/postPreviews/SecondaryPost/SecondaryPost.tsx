@@ -37,7 +37,7 @@ export const SecondaryPost: FC<TSecondaryPost> = ({
         </Flex>
         <Title>{title}</Title>
         <TextPreview>{`${text.substring(0, 150)}...`}</TextPreview>
-        <Flex wrap>
+        <Flex shouldWrap>
           {tags.map((tag, i) => (
             <Tag key={tag + i}>{tag}</Tag>
           ))}

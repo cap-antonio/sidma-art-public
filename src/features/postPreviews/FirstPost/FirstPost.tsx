@@ -19,6 +19,7 @@ export const FirstPost: FC<TFirstPost> = ({
   const {
     i18n: { language },
   } = useTranslation()
+
   return (
     <StyledFirstPost>
       <Image
@@ -38,7 +39,7 @@ export const FirstPost: FC<TFirstPost> = ({
 
         <Title>{title}</Title>
         <TextPreview>{`${text.substring(0, 150)}...`}</TextPreview>
-        <Flex wrap>
+        <Flex shouldWrap>
           {tags.map((tag, i) => (
             <Tag key={tag + i}>{tag}</Tag>
           ))}

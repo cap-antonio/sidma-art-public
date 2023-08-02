@@ -6,7 +6,7 @@ export const StyledFlex = styled.div<TFlex>`
   flex-direction: ${({ direction }) => direction};
   justify-content: ${({ justify }) => justify};
   align-content: ${({ align }) => align};
-  flex-wrap: ${({ wrap }) => (wrap ? 'wrap' : 'nowrap')};
+  flex-wrap: ${({ shouldWrap }) => (shouldWrap ? 'wrap' : 'nowrap')};
 
   height: ${({ height }) => height};
   margin: ${({ margin }) => margin};
