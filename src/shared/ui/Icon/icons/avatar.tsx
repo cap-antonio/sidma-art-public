@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Avatar: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <image>
+  <picture>
     <svg
       height="18"
       viewBox="0 0 512 512"
@@ -15,5 +15,5 @@ export const Avatar: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 			c29.765,0,53.895-24.13,53.895-53.895C458.105,346.487,367.619,256,256,256z"
       />
     </svg>
-  </image>
+  </picture>
 )
