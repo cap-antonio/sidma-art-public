@@ -15,8 +15,7 @@ module.exports = {
         },
         {
           name: 'dir_path',
-          message:
-            'Component path: (it will be concatenated with "src/shared/")',
+          message: 'Component path: (it will be concatenated with "src/")',
           type: 'input',
         },
         {
@@ -28,9 +27,7 @@ module.exports = {
       ])
       .then(async (answers) => {
         const { component_name } = answers
-        const dir_path = answers.dir_path
-          ? `src/shared/${answers.dir_path}`
-          : `src/shared`
+        const dir_path = answers.dir_path ? `src/${answers.dir_path}` : `src/`
         const component_path = `${dir_path}/${
           component_name.slice(0, 1).toUpperCase() +
           component_name.slice(1, component_name.length)

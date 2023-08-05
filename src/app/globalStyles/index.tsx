@@ -17,26 +17,29 @@ export const globalStyles = (
 
       html,
       body {
-        background: white;
-        min-height: 100vh;
-        font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
-        padding: 0;
-        margin: 0;
-      }
-
-      body {
-        overflow-y: scroll; // this is necessary to block without displacement of the main content when the modal is opened
-        margin: 0;
-        min-height: 100%;
         display: flex;
         flex-direction: column;
+
+        /* overflow-y: scroll; // this is necessary to block without displacement of the main content when the modal is opened */
+        padding: 0;
+        margin: 0;
+        min-height: 100%;
+        background: rgb(232, 230, 230);
+        min-height: 100vh;
+        font-family: 'Cormorant Garamond', serif;
       }
 
-      @font-face {
-        font-family: 'Organetto';
-        src: url('/fonts/Organetto/Organetto-UltraBoldSemiExt.ttf');
-        font-style: normal;
+      button,
+      input,
+      textarea {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 18px;
       }
+
+      /* @font-face {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: normal;
+      } */
     `}
   />
 )
