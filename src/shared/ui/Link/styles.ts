@@ -1,11 +1,11 @@
 import styled from '@emotion/styled'
-import { Link } from 'react-router-dom'
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled.a`
   color: black;
   text-decoration: none;
   padding: 8px;
   margin: 8px;
+  cursor: pointer;
 
   &:hover {
     color: ${({ theme }) => theme.colors.green};
