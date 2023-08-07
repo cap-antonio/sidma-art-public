@@ -1,5 +1,5 @@
 export const CloudIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <image>
+  <picture>
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -16,21 +16,6 @@ export const CloudIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
           />
         </g>
       </g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
-      <g></g>
     </svg>
-  </image>
+  </picture>
 )

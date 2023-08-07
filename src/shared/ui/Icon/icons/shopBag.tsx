@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const ShopBag: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <image>
+  <picture>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-23 -150 820 820"
@@ -16,5 +16,5 @@ export const ShopBag: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 		c0,6.6,5.4,12,12,12s12-5.4,12-12v-42.1h47.6l26.8,301.8C410.25,441.7,389.05,459,363.05,459z"
       />
     </svg>
-  </image>
+  </picture>
 )

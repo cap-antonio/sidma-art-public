@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <image>
+  <picture>
     <svg
       width="18"
       height="18"
@@ -17,5 +17,5 @@ export const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         fill="#C6C6C6"
       />
     </svg>
-  </image>
+  </picture>
 )

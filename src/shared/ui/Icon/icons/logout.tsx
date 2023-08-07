@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const LogoutIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <image>
+  <picture>
     <svg
       width="12"
       height="14"
@@ -17,5 +17,5 @@ export const LogoutIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         fill="#000000"
       />
     </svg>
-  </image>
+  </picture>
 )
