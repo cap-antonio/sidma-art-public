@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import { StyledFirstPost } from './styles'
@@ -15,12 +16,18 @@ export const FirstPost: FC<TFirstPost> = ({
   author,
   tags,
   published,
+  id,
 }) => {
   const {
     i18n: { language },
   } = useTranslation()
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(id)
+  }
   return (
-    <StyledFirstPost>
+    <StyledFirstPost onClick={handleClick}>
       <Image
         url={img.url}
         alt={img.alt}

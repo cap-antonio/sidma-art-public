@@ -3,7 +3,7 @@ import { Container, PostsWrapper, SecondaryColumn } from './styles'
 import { SecondaryPost, FirstPost, AnotherPost } from 'src/features'
 import { useFetchFeedQuery, TPost } from 'src/shared/api'
 
-import { TDevidedPosts } from './types'
+import { TDividedPosts } from './types'
 
 const mockPost: TPost = {
   id: '',
@@ -25,10 +25,10 @@ const mockPost: TPost = {
 export const Feed: FC = () => {
   const { data, isLoading } = useFetchFeedQuery()
 
-  const { latest, other, seconds } = (data || []).reduce<TDevidedPosts>(
+  const { first, other, seconds } = (data || []).reduce<TDividedPosts>(
     (res, curr, i) => {
       if (i === 0) {
-        res['latest'] = curr
+        res['first'] = curr
       } else if (i > 0 && i < 4) {
         res['seconds'] = [...(res['seconds'] || []), curr]
       } else {
@@ -38,7 +38,7 @@ export const Feed: FC = () => {
       return res
     },
     {
-      latest: mockPost,
+      first: mockPost,
       seconds: [],
       other: [],
     },
@@ -52,7 +52,7 @@ export const Feed: FC = () => {
           <>Loading...</>
         ) : (
           <>
-            <FirstPost {...latest} />
+            <FirstPost {...first} />
             <SecondaryColumn>
               {seconds.map((post) => (
                 <SecondaryPost {...post} />

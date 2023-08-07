@@ -5,6 +5,7 @@ import { StyledSecondaryPost } from './styles'
 import { Flex, Image } from 'src/shared/ui'
 import { Meta, Tag, TextPreview, Title } from '../styles'
 import { formatDate } from 'src/shared/utils'
+import { useNavigate } from 'react-router-dom'
 
 import { TSecondaryPost } from './types'
 
@@ -15,12 +16,18 @@ export const SecondaryPost: FC<TSecondaryPost> = ({
   author,
   tags,
   published,
+  id,
 }) => {
   const {
     i18n: { language },
   } = useTranslation()
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(id)
+  }
   return (
-    <StyledSecondaryPost>
+    <StyledSecondaryPost onClick={handleClick}>
       <Image
         url={img.url}
         alt={img.alt}

@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { StyledAnotherPost } from './styles'
 import { Tag, Meta, Title, TextPreview } from '../styles'
@@ -15,12 +16,18 @@ export const AnotherPost: FC<TAnotherPost> = ({
   img,
   author,
   published,
+  id,
 }) => {
   const {
     i18n: { language },
   } = useTranslation()
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(id)
+  }
   return (
-    <StyledAnotherPost>
+    <StyledAnotherPost onClick={handleClick}>
       <Image
         url={img.url}
         alt={img.alt}
