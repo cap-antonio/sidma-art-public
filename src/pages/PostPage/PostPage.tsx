@@ -1,7 +1,12 @@
 import { FC } from 'react'
 
 import { StyledBlogPostPage } from './styles'
+import { Post } from 'src/widgets'
 
 export const PostPage: FC = () => {
-  return <StyledBlogPostPage> Переход работает</StyledBlogPostPage>
+  return (
+    <StyledBlogPostPage>
+      <Post />
+    </StyledBlogPostPage>
+  )
 }

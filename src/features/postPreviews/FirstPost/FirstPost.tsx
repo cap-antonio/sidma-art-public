@@ -7,6 +7,7 @@ import { Flex, Image } from 'src/shared/ui'
 import { formatDate } from 'src/shared/utils'
 
 import { TFirstPost } from './types'
+import { useNavigate } from 'react-router-dom'
 
 export const FirstPost: FC<TFirstPost> = ({
   text,
@@ -15,13 +16,19 @@ export const FirstPost: FC<TFirstPost> = ({
   author,
   tags,
   published,
+  id,
 }) => {
   const {
     i18n: { language },
   } = useTranslation()
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(id)
+  }
 
   return (
-    <StyledFirstPost>
+    <StyledFirstPost onClick={handleClick}>
       <Image
         url={img.url}
         alt={img.alt}
