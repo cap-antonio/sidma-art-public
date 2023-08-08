@@ -6,7 +6,7 @@ export type TCSSIndent =
   | `${number}%`
 
 export enum Pages {
-  main = '/',
+  gallery = '/',
   contacts = '/contacts',
   shop = '/shop',
   blog = '/blog',
