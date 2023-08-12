@@ -5,10 +5,10 @@ import { StyledLink } from './styles'
 
 import { TLink } from './types'
 
-export const Link: FC<PropsWithChildren<TLink>> = ({ to, children }) => {
+export const Link: FC<PropsWithChildren<TLink>> = ({ to, children, hover }) => {
   return (
-    <NextLink href={to}>
-      <StyledLink>{children}</StyledLink>
-    </NextLink>
+    <StyledLink href={to} hover={hover ? 'true' : ''}>
+      {children}
+    </StyledLink>
   )
 }

@@ -8,8 +8,8 @@ import { Link } from 'src/shared/ui'
 
 const links = [
   {
-    path: Pages.main,
-    title: 'Main',
+    path: Pages.gallery,
+    title: 'Gallery',
   },
   {
     path: Pages.shop,
@@ -32,7 +32,7 @@ export const NavigationLinks: FC<TNavigationLinks> = ({ kind = 'header' }) => {
   return (
     <StyledNavigationLinks>
       {links.map(({ path, title }) => (
-        <Link key={path} to={path}>
+        <Link key={path} to={path} hover>
           {title}
         </Link>
       ))}

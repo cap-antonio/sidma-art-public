@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
+import { ExtendedLinkProps } from './types'
+import Link from 'next/link'
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)<ExtendedLinkProps>`
   color: black;
   text-decoration: none;
   padding: 8px;
@@ -8,6 +10,7 @@ export const StyledLink = styled.a`
   cursor: pointer;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.green};
+    color: ${({ theme, hover }) =>
+      hover === 'true' ? theme.colors.green : ''};
   }
 `
