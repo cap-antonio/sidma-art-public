@@ -12,4 +12,5 @@ export const Wrapper = styled.object<TStyledImage>`
 export const StyledImage = styled.img`
   width: 100%;
   object-fit: cover;
+  color: ${({ theme }) => theme.colors.green};
 `
