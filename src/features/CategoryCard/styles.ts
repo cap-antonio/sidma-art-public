@@ -5,6 +5,7 @@ export const StyledCategoryCard = styled.div`
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  transition: box-shadow 0.3s;
 
   ${media.sm} {
     display: flex;
@@ -19,7 +20,7 @@ export const StyledCategoryCard = styled.div`
   }
 
   &:hover {
-    color: ${({ theme }) => theme.colors.green};
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   }
 `
 
@@ -28,17 +29,6 @@ export const ImageContainer = styled.div`
   width: 100%;
   height: 350px;
   overflow: hidden;
-
-  &:hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: ${({ theme }) => `${theme.colors.green}70`};
-    z-index: 1;
-  }
 `
 
 export const Name = styled.p`
