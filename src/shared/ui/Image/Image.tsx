@@ -1,24 +1,16 @@
 import { FC } from 'react'
-import { Wrapper, StyledImage } from './styles'
+import NextImage from 'next/image'
+
+import './styles.scss'
 
 import { TImage } from './types'
+import classNames from 'classnames'
 
-export const Image: FC<TImage> = ({
-  alt,
-  height,
-  width,
-  url,
-  objectFit = 'none',
-}) => {
+export const Image: FC<TImage> = ({ className, ...rest }) => {
+  const imageClassNames = classNames('image-wrapper', className)
   return (
-    <Wrapper
-      height={height}
-      width={width}
-      objectFit={objectFit}
-      data={url}
-      type="image/png"
-    >
-      <StyledImage alt={alt} src="/img/image-fallback.png" />
-    </Wrapper>
+    <div className={imageClassNames}>
+      <NextImage {...rest} fill objectFit="cover" />
+    </div>
   )
 }

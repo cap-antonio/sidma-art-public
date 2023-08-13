@@ -1,14 +1,17 @@
 import { FC } from 'react'
+import classNames from 'classnames'
 
-import { InputWrapper, StyledInput } from './styles'
-import { TInput } from './types'
+import './styles.scss'
 import { Label } from '../Label'
 
-export const Input: FC<TInput> = ({ margin, label, ...rest }) => {
+import { TInput } from './types'
+
+export const Input: FC<TInput> = ({ label, className, ...rest }) => {
+  const inputClassNames = classNames('input-wrapper', className)
   return (
-    <InputWrapper margin={margin}>
+    <div className={inputClassNames}>
       {label && <Label>{label}</Label>}
-      <StyledInput {...rest} />
-    </InputWrapper>
+      <input className="input" {...rest} />
+    </div>
   )
 }

@@ -1,9 +1,5 @@
-export type TImage = {
-  alt: string
-  url: string
-  height?: string
-  width?: string
-  objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
-}
+import { ImageProps } from 'next/image'
 
-export type TStyledImage = Omit<TImage, 'url' | 'alt'>
+export type TImage = {
+  className?: string
+} & ImageProps

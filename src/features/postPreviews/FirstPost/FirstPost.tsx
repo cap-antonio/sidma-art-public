@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { StyledFirstPost } from './styles'
-import { Title, Tag, Meta, TextPreview } from '../styles'
-import { Flex, Image } from 'src/shared/ui'
-import { formatDate } from 'src/shared/utils'
+import './styles.scss'
+import '../styles.scss'
+import { FlexColumn, FlexRow, Image } from '@shared/ui'
+import { formatDate } from '@shared/utils'
 
 import { TFirstPost } from './types'
 
@@ -21,30 +21,26 @@ export const FirstPost: FC<TFirstPost> = ({
   } = useTranslation()
 
   return (
-    <StyledFirstPost>
-      <Image
-        url={img.url}
-        alt={img.alt}
-        height={'70%'}
-        width={'100%'}
-        objectFit={'cover'}
-      />
+    <div className="first-post">
+      <Image src={img.url} alt={img.alt} className="first-post-img" />
 
-      <Flex direction="column" padding="8px">
-        <Flex>
-          <Meta>{author.name}</Meta>
+      <FlexColumn>
+        <FlexRow>
+          <p className="meta">{author.name}</p>
           <span>&#8226;</span>
-          <Meta>{formatDate(published, language)}</Meta>
-        </Flex>
+          <p className="meta">{formatDate(published, language)}</p>
+        </FlexRow>
 
-        <Title>{title}</Title>
-        <TextPreview>{`${text.substring(0, 150)}...`}</TextPreview>
-        <Flex shouldWrap>
+        <p className="title">{title}</p>
+        <p className="text-preview">{`${text.substring(0, 150)}...`}</p>
+        <FlexRow wrap>
           {tags.map((tag, i) => (
-            <Tag key={tag + i}>{tag}</Tag>
+            <div className="tag" key={tag + i}>
+              {tag}
+            </div>
           ))}
-        </Flex>
-      </Flex>
-    </StyledFirstPost>
+        </FlexRow>
+      </FlexColumn>
+    </div>
   )
 }

@@ -1,0 +1,55 @@
+@import 'src/shared/styles/index.scss';
+
+.drawer {
+  position: fixed;
+  right: 0;
+
+  width: 100%;
+  height: 100vh;
+  background: $violet;
+  transition: max-width 0.5s ease-out;
+  overflow: hidden;
+  z-index: 100;
+  max-width: 0;
+
+  .drawer-header {
+    display: flex;
+    align-items: center;
+
+    position: realtive;
+
+    width: 100%;
+    height: 50px;
+
+    .close-button-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-inline: 8px;
+
+      @include md {
+        display: flex;
+
+        margin-left: auto;
+      }
+    }
+  }
+  .drawer-body {
+    padding: 32px;
+
+    white-space: nowrap;
+
+    @include sm {
+      padding: 16px;
+    }
+  }
+}
+
+.opened {
+  max-width: 300px;
+
+  @include sm {
+    max-width: 250px;
+  }
+}

@@ -1,7 +1,8 @@
 import { FC } from 'react'
-import { StyledCategoryCard, Description, Name, ImageContainer } from './styles'
-import { Flex, Image, Link } from 'src/shared/ui'
+import './styles.scss'
+import { FlexColumn, Image, Link } from '@shared/ui'
 import { TCategoryCard } from './types'
+import {} from '@shared/ui'
 
 export const CategoryCard: FC<TCategoryCard> = ({
   id,
@@ -10,27 +11,25 @@ export const CategoryCard: FC<TCategoryCard> = ({
   image,
 }) => {
   return (
-    <Link to={`/category/${id}`}>
-      <StyledCategoryCard>
-        <ImageContainer>
+    <Link href={`/category/${id}`}>
+      <div className="category-card">
+        <div className="image-container">
           <Image
-            url={image.src}
+            src={image.src}
             alt={image.alt}
-            width={'100%'}
-            height={'350px'}
-            objectFit={'cover'}
+            className="category-card-img"
           />
-        </ImageContainer>
+        </div>
 
-        <Flex direction="column" padding="8px">
-          <Name>{name}</Name>
+        <FlexColumn>
+          <p className="name">{name}</p>
           {description && (
-            <Description>
+            <p className="description">
               {`${description.substring(0, 150)}` + '...'}
-            </Description>
+            </p>
           )}
-        </Flex>
-      </StyledCategoryCard>
+        </FlexColumn>
+      </div>
     </Link>
   )
 }

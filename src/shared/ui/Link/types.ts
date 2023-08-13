@@ -1,10 +1,5 @@
-import { LinkProps } from 'react-router-dom'
+import { LinkProps } from 'next/link'
 
-export type TLink = {
-  to: string
-  hover?: boolean
-}
-
-export type ExtendedLinkProps = LinkProps & {
-  hover?: string
+export type TLink = LinkProps & {
+  className?: string
 }

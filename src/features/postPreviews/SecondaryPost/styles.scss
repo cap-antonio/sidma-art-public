@@ -1,0 +1,42 @@
+@import 'src/shared/styles/index.scss';
+
+.secondary-post {
+  display: flex;
+
+  cursor: pointer;
+  height: 33%;
+  overflow: hidden;
+
+  @include lg {
+    flex-direction: column;
+
+    height: auto;
+    width: 33%;
+  }
+
+  @include md {
+    height: auto;
+    width: calc(33% - 4px);
+  }
+
+  @include sm {
+    height: auto;
+    width: 100%;
+  }
+
+  .secondary-post-img {
+    width: 100%;
+    height: 180px;
+
+    @include lg {
+      width: 100%;
+      min-height: 150px;
+      height: 150px;
+    }
+
+    @include sm {
+      width: 100%;
+      height: 70%;
+    }
+  }
+}

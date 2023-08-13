@@ -1,0 +1,18 @@
+@import 'src/shared/styles/index.scss';
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  margin: 8px auto;
+  max-width: 600px;
+  @include md {
+    margin: 16px;
+  }
+
+  .margin {
+    @include margin('8px 0px');
+  }
+}

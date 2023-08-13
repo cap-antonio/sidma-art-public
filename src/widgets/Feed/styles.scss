@@ -1,0 +1,47 @@
+@import 'src/shared/styles/index.scss';
+
+.feed-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  width: 100%;
+  max-width: 1200px;
+  padding: 16px;
+  gap: 8px;
+
+  @include md {
+    justify-content: flex-start;
+  }
+
+  @include sm {
+    flex-direction: column;
+  }
+
+  .secondary-column {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(50% - 4px);
+    gap: 8px;
+
+    @include lg {
+      flex-direction: row;
+
+      width: 100%;
+    }
+
+    @include md {
+      flex-direction: row;
+
+      width: 100%;
+    }
+
+    @include sm {
+      flex-direction: column;
+
+      height: auto;
+      width: 100%;
+    }
+  }
+}

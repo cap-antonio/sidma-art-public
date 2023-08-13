@@ -1,0 +1,13 @@
+@import 'src/shared/styles/index.scss';
+
+.custom-link {
+  color: $black;
+  text-decoration: none;
+  padding: 8px;
+  margin: 8px;
+  cursor: pointer;
+
+  &:hover {
+    color: $green;
+  }
+}
