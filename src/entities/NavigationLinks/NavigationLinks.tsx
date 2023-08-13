@@ -1,10 +1,10 @@
 import { FC } from 'react'
 
-import { DrawerWrapper, HeaderWrapper } from './styles'
+import './styles.scss'
+import { Link } from '@shared/ui'
 
+import { Pages } from '@shared/types'
 import { TNavigationLinks } from './types'
-import { Pages } from 'src/shared/types'
-import { Link } from 'src/shared/ui'
 
 const links = [
   {
@@ -26,16 +26,16 @@ const links = [
 ]
 
 export const NavigationLinks: FC<TNavigationLinks> = ({ kind = 'header' }) => {
-  const StyledNavigationLinks =
-    kind === 'header' ? HeaderWrapper : DrawerWrapper
+  const styledNavigationLinks =
+    kind === 'header' ? 'header-wrapper' : 'drawer-wrapper'
 
   return (
-    <StyledNavigationLinks>
+    <div className={styledNavigationLinks}>
       {links.map(({ path, title }) => (
-        <Link key={path} to={path} hover>
+        <Link key={path} href={path}>
           {title}
         </Link>
       ))}
-    </StyledNavigationLinks>
+    </div>
   )
 }

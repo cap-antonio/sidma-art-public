@@ -3,7 +3,7 @@ import i18n from 'i18next'
 // import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 // import resourcesToBackend from 'i18next-resources-to-backend'
-import { lsGet, LSKeys, lsSet } from 'src/shared/utils'
+import { lsGet, LSKeys, lsSet } from '@shared/utils'
 
 export enum Locales {
   en = 'en',

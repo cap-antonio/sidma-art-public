@@ -1,0 +1,25 @@
+@import 'src/shared/styles/index.scss';
+
+.title {
+  color: $black;
+  margin-block: 4px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.meta {
+  @include margin(4px, 'inline');
+  font-style: italic;
+}
+
+.textPreview {
+  @include margin(8px, 'bottom');
+}
+
+.tag {
+  border-radius: 12px;
+  border: 1px solid $black;
+  padding: 2px 4px;
+  @include margin(4px 4px 0 0);
+  font-weight: 600;
+}

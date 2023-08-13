@@ -1,9 +1,11 @@
 import { FC } from 'react'
-import { Container, PostsWrapper, SecondaryColumn } from './styles'
-import { SecondaryPost, FirstPost, AnotherPost } from 'src/features'
-import { useFetchFeedQuery, TPost } from 'src/shared/api'
+
+import { SecondaryPost, FirstPost, AnotherPost } from '@features'
+import { useFetchFeedQuery, TPost } from '@shared/api'
+import './styles.scss'
 
 import { TDevidedPosts } from './types'
+import { FlexRow } from '@shared/ui'
 
 const mockPost: TPost = {
   id: '',
@@ -45,25 +47,25 @@ export const Feed: FC = () => {
   )
 
   return (
-    <Container>
-      <PostsWrapper>
+    <FlexRow justify="center">
+      <div className="feed-wrapper">
         {isLoading ? (
           // TODO replace text with true Loader
           <>Loading...</>
         ) : (
           <>
             <FirstPost {...latest} />
-            <SecondaryColumn>
+            <div className="secondary-column">
               {seconds.map((post) => (
                 <SecondaryPost {...post} />
               ))}
-            </SecondaryColumn>
+            </div>
             {other.map((post) => (
               <AnotherPost {...post} />
             ))}
           </>
         )}
-      </PostsWrapper>
-    </Container>
+      </div>
+    </FlexRow>
   )
 }

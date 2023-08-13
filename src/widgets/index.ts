@@ -1,3 +1,3 @@
 export * from './Header'
 export * from './Feed'
-export * from './ProductCategory'
+export * from './Gallery'

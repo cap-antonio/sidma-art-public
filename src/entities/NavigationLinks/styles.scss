@@ -1,0 +1,13 @@
+@import 'src/shared/styles/index.scss';
+
+.header-wrapper {
+  @include md {
+    display: none;
+  }
+}
+
+.drawer-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

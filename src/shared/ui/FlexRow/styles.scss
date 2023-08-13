@@ -1,0 +1,33 @@
+@import 'src/shared/styles/index.scss';
+.flex-row {
+  display: flex;
+  width: 100%;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.justify {
+  &__center {
+    justify-content: center;
+  }
+
+  &__space-between {
+    justify-content: space-between;
+  }
+
+  &__flex-start {
+    justify-content: flex-start;
+  }
+
+  &__flex-end {
+    justify-content: flex-end;
+  }
+}
+
+.align {
+  &__center {
+    align-items: center;
+  }
+}

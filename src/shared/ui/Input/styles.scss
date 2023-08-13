@@ -1,0 +1,23 @@
+@import 'src/shared/styles/index.scss';
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .input {
+    display: flex;
+
+    outline: none;
+    padding: 16px;
+
+    font-size: 16px;
+    color: $black;
+    border: 1px solid $black;
+    background: transparent;
+
+    &::placeholder {
+      color: $black;
+      text-transform: capitalize;
+    }
+  }
+}
