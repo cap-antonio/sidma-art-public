@@ -17,10 +17,10 @@ Follow a file structure described in [here](docs/components.md)
 
 ## Modules organizations
 
-It is usefull to have a common structure (for example `src/hooks` or `src/helpers`). As with the component structure please consider using the same way of organization :
+It is usefull to have a common structure (for example `src/shared/hooks` or `src/shared/helpers`). As with the component structure please consider using the same way of organization :
 
 - `getSomeData.tsx` which will contain the module
 - `types.ts` with types for the particular module
 - `index.ts` for imports all what we need
 
-Then all modules are imported from the index file of the paretn folder, for example `src/helpers/index.ts`.
+Then all modules are imported from the index file of the paretn folder, for example `src/shared/helpers/index.ts`.
