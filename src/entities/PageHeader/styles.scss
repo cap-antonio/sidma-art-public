@@ -1,0 +1,13 @@
+@import '@shared/styles/index.scss';
+
+.page-header {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  padding: 32px 0;
+  color: $black;
+  text-align: center;
+  font-size: 32px;
+  user-select: none;
+}

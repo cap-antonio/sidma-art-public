@@ -1,14 +1,17 @@
 import { FC } from 'react'
+import classNames from 'classnames'
 
-import { TTextarea } from './types'
-import { StyledTextarea, TextareaWrapper } from './styles'
+import './styles.scss'
 import { Label } from '../Label'
 
-export const Textarea: FC<TTextarea> = ({ margin, label, ...rest }) => {
+import { TTextarea } from './types'
+
+export const Textarea: FC<TTextarea> = ({ className, label, ...rest }) => {
+  const textAreaClassName = classNames('textarea-wrapper', className)
   return (
-    <TextareaWrapper margin={margin}>
+    <div className={textAreaClassName}>
       {label && <Label>{label}</Label>}
-      <StyledTextarea {...rest} />
-    </TextareaWrapper>
+      <textarea className="textarea" {...rest} />
+    </div>
   )
 }

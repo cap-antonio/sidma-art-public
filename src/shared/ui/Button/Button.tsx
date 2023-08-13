@@ -1,10 +1,16 @@
 import { FC, PropsWithChildren, memo } from 'react'
+import cn from 'classnames'
 
-import { StyledButton } from './styles'
+import './styles.scss'
 import { TButton } from './types'
 
 export const Button: FC<PropsWithChildren<TButton>> = memo(
-  ({ children, ...rest }) => {
-    return <StyledButton {...rest}>{children}</StyledButton>
+  ({ children, className, ...rest }) => {
+    const buttonClassNames = cn('button', className)
+    return (
+      <button className={buttonClassNames} {...rest}>
+        {children}
+      </button>
+    )
   },
 )

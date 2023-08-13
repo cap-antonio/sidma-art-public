@@ -1,13 +1,14 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
 
-import { StyledFirstPost } from './styles'
-import { Title, Tag, Meta, TextPreview } from '../styles'
-import { Flex, Image } from 'src/shared/ui'
-import { formatDate } from 'src/shared/utils'
+import './styles.scss'
+import '../styles.scss'
+import { FlexColumn, FlexRow, Image } from '@shared/ui'
+import { formatDate } from '@shared/utils'
 
 import { TFirstPost } from './types'
-import { useNavigate } from 'react-router-dom'
+import { Pages } from '@shared/types'
 
 export const FirstPost: FC<TFirstPost> = ({
   text,
@@ -21,37 +22,33 @@ export const FirstPost: FC<TFirstPost> = ({
   const {
     i18n: { language },
   } = useTranslation()
-  const navigate = useNavigate()
+  const { push } = useRouter()
 
   const handleClick = () => {
-    navigate(id)
+    push(`${Pages.blog}/${id}`)
   }
 
   return (
-    <StyledFirstPost onClick={handleClick}>
-      <Image
-        url={img.url}
-        alt={img.alt}
-        height={'70%'}
-        width={'100%'}
-        objectFit={'cover'}
-      />
+    <div className="first-post" onClick={handleClick}>
+      <Image src={img.url} alt={img.alt} className="first-post-img" />
 
-      <Flex direction="column" padding="8px">
-        <Flex>
-          <Meta>{author.name}</Meta>
+      <FlexColumn>
+        <FlexRow>
+          <p className="meta">{author.name}</p>
           <span>&#8226;</span>
-          <Meta>{formatDate(published, language)}</Meta>
-        </Flex>
+          <p className="meta">{formatDate(published, language)}</p>
+        </FlexRow>
 
-        <Title>{title}</Title>
-        <TextPreview>{`${text.substring(0, 150)}...`}</TextPreview>
-        <Flex shouldWrap>
+        <p className="title">{title}</p>
+        <p className="text-preview">{`${text.substring(0, 150)}...`}</p>
+        <FlexRow wrap>
           {tags.map((tag, i) => (
-            <Tag key={tag + i}>{tag}</Tag>
+            <div className="tag" key={tag + i}>
+              {tag}
+            </div>
           ))}
-        </Flex>
-      </Flex>
-    </StyledFirstPost>
+        </FlexRow>
+      </FlexColumn>
+    </div>
   )
 }

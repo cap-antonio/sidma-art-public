@@ -1,13 +1,14 @@
 import { FC } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
+import { useTranslation } from 'react-i18next'
 
-import { StyledAnotherPost } from './styles'
-import { Tag, Meta, Title, TextPreview } from '../styles'
-import { Flex, Image } from 'src/shared/ui'
+import { formatDate } from '@shared/utils'
+import './styles.scss'
+import '../styles.scss'
+import { FlexRow, FlexColumn, Image } from '@shared/ui'
 
 import { TAnotherPost } from './types'
-import { formatDate } from 'src/shared/utils'
-import { useTranslation } from 'react-i18next'
+import { Pages } from '@shared/types'
 
 export const AnotherPost: FC<TAnotherPost> = ({
   tags,
@@ -21,38 +22,34 @@ export const AnotherPost: FC<TAnotherPost> = ({
   const {
     i18n: { language },
   } = useTranslation()
-  const navigate = useNavigate()
+  const { push } = useRouter()
 
   const handleClick = () => {
-    navigate(id)
+    push(`${Pages.blog}/${id}`)
   }
   return (
-    <StyledAnotherPost onClick={handleClick}>
-      <Image
-        url={img.url}
-        alt={img.alt}
-        width={'100%'}
-        height="150px"
-        objectFit={'cover'}
-      />
+    <div className="another-post" onClick={handleClick}>
+      <Image src={img.url} alt={img.alt} className="another-post-img" />
 
-      <Flex direction="column" padding="8px">
-        <Flex>
-          <Meta>{author.name}</Meta>
+      <FlexColumn>
+        <FlexRow>
+          <p className="meta">{author.name}</p>
 
           <span>&#8226;</span>
-          <Meta>{formatDate(published, language)}</Meta>
-        </Flex>
+          <p className="meta">{formatDate(published, language)}</p>
+        </FlexRow>
 
-        <Title>{title}</Title>
-        <TextPreview>{`${text.substring(0, 150)}` + '...'}</TextPreview>
+        <p className="title">{title}</p>
+        <p className="text-preview">{`${text.substring(0, 150)}` + '...'}</p>
 
-        <Flex shouldWrap>
+        <FlexRow wrap>
           {tags.map((tag, i) => (
-            <Tag key={tag + i}>{tag}</Tag>
+            <div key={tag + i} className="tag">
+              {tag}
+            </div>
           ))}
-        </Flex>
-      </Flex>
-    </StyledAnotherPost>
+        </FlexRow>
+      </FlexColumn>
+    </div>
   )
 }

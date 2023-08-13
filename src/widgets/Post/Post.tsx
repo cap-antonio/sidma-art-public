@@ -1,8 +1,9 @@
+import { useFetchPostQuery } from '@shared/api'
+import { useRouter } from 'next/router'
 import { FC } from 'react'
-import { useParams } from 'react-router-dom'
 
 export const Post: FC = () => {
-  const { postId } = useParams()
-  console.log(postId)
-  return <></>
+  const { id } = useRouter().query as { id: string }
+  const { data } = useFetchPostQuery(id)
+  return <>{JSON.stringify(data)}</>
 }

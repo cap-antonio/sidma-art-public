@@ -1,9 +1,13 @@
 import { FC, PropsWithChildren } from 'react'
 
-import { StyledLabel } from './styles'
+import './styles.scss'
 
 import { TLabel } from './types'
 
 export const Label: FC<PropsWithChildren<TLabel>> = ({ children, ...rest }) => {
-  return <StyledLabel {...rest}>{children}</StyledLabel>
+  return (
+    <label className="label" {...rest}>
+      {children}
+    </label>
+  )
 }

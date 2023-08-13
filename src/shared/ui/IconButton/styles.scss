@@ -1,0 +1,32 @@
+@import 'src/shared/styles/index.scss';
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  border-radius: 100%;
+  border: none;
+  width: 32px;
+  height: 32px;
+  transition: 0.25s;
+  svg {
+    fill: $green;
+  }
+  background: transparent;
+
+  &:hover {
+    svg {
+      fill: $greenAccent;
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+
+    svg {
+      fill: $green;
+    }
+  }
+}

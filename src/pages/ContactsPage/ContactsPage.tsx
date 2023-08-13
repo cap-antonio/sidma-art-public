@@ -1,21 +1,21 @@
 import { FC } from 'react'
+import { PageBlock, PageHeader } from '@entities'
+import { Button, Input, Textarea } from '@shared/ui'
 
-import { Button, Input, Textarea } from 'src/shared/ui'
-import { PageBlock, PageHeader } from 'src/entities'
-import { StyledContactsPage, FormWrapper } from './styles'
+import './styles.scss'
 
 export const ContactsPage: FC = () => {
   return (
-    <StyledContactsPage>
+    <div>
       <PageHeader>Контакты</PageHeader>
       <PageBlock>
-        <FormWrapper>
-          <Input placeholder="Name" margin="8px 0px" />
-          <Input placeholder="email" margin="8px 0px" />
-          <Textarea placeholder="Сообщение" margin="8px 0px" />
-          <Button margin="8px 0px">Submit</Button>
-        </FormWrapper>
+        <div className="form-wrapper">
+          <Input placeholder="Name" className="margin" />
+          <Input placeholder="email" className="margin" />
+          <Textarea placeholder="Сообщение" className="margin" />
+          <Button className="margin">Submit</Button>
+        </div>
       </PageBlock>
-    </StyledContactsPage>
+    </div>
   )
 }
