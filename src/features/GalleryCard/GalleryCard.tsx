@@ -1,17 +1,16 @@
 import { FC } from 'react'
 import './styles.scss'
 import { FlexColumn, Image, Link } from '@shared/ui'
-import { TCategoryCard } from './types'
-import {} from '@shared/ui'
+import { TGalleryCard } from './types'
 
-export const CategoryCard: FC<TCategoryCard> = ({
-  id,
-  name,
-  description,
-  image,
-}) => {
+export const GalleryCard: FC<TGalleryCard> = ({ name, description, image }) => {
+  const truncatedDescription =
+    description && description.length > 150
+      ? description.substring(0, 150) + '...'
+      : description
+
   return (
-    <Link href={`/category/${id}`}>
+    <Link href={`/category/${name}`}>
       <div className="category-card">
         <div className="image-container">
           <Image
@@ -23,10 +22,8 @@ export const CategoryCard: FC<TCategoryCard> = ({
 
         <FlexColumn>
           <p className="name">{name}</p>
-          {description && (
-            <p className="description">
-              {`${description.substring(0, 150)}` + '...'}
-            </p>
+          {truncatedDescription && (
+            <p className="description">{truncatedDescription}</p>
           )}
         </FlexColumn>
       </div>
