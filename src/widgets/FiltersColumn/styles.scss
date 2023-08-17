@@ -1,0 +1,16 @@
+.block {
+  width: 20px;
+  min-height: 100vh;
+  background-color: rgb(207, 204, 204);
+  transition: width 0.3s;
+  box-shadow: rgb(0, 0, 0, 1) 0px 10px 10px 0px;
+}
+
+.block.visible {
+  width: 250px;
+}
+
+.content {
+  flex: 1;
+  background-color: black;
+}

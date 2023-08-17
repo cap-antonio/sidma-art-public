@@ -1,6 +1,6 @@
 @import 'src/shared/styles/index.scss';
 
-.category-wrapper {
+.gallery-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -10,7 +10,7 @@
   padding: 16px;
   gap: 8px;
 
-  @include md {
+  @include sm {
     flex-direction: column;
   }
 }

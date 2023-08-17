@@ -10,7 +10,7 @@
   padding: 16px;
   gap: 8px;
 
-  @include md {
+  @include sm {
     flex-direction: column;
   }
 }

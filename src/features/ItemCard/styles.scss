@@ -1,13 +1,15 @@
 @import 'src/shared/styles/index.scss';
 
-.category-card {
+.item-card {
   position: relative;
   cursor: pointer;
   overflow: hidden;
   transition: box-shadow 0.3s;
-  width: 250px;
+  width: 266px;
+  padding: 8px;
+  margin: 8px;
 
-  @include md {
+  @include sm {
     display: flex;
     flex-direction: column;
     height: auto;

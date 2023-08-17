@@ -10,7 +10,7 @@ export const ItemCard: FC<TItemCard> = ({ name, description, image }) => {
       : description
 
   return (
-    <div className="category-card">
+    <div className="item-card">
       <div className="image-container">
         <Image src={image.src} alt={image.alt} className="category-card-img" />
       </div>

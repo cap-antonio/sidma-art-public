@@ -222,7 +222,7 @@ export const Gallery: FC = () => {
 
   return (
     <FlexRow justify="center">
-      <div className="category-wrapper">
+      <div className="gallery-wrapper">
         {isLoading ? (
           // TODO replace text with true Loader
           <>Loading...</>

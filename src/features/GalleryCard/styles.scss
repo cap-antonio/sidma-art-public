@@ -7,7 +7,7 @@
   transition: box-shadow 0.3s;
   width: 250px;
 
-  @include md {
+  @include sm {
     display: flex;
     flex-direction: column;
     height: auto;
