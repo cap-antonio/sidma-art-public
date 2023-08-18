@@ -31,7 +31,7 @@ export const useGallery = () => {
   const preparedGallery = data?.gallery.map((gallery) => {
     return {
       ...gallery,
-      image: prepareImage(gallery.image.id, gallery.name),
+      image: prepareImage(gallery.image.id, gallery.title),
     }
   })
 
