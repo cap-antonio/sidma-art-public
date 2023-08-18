@@ -12,7 +12,7 @@ export const AnotherPost: FC<TAnotherPost> = ({
   tags,
   text,
   title,
-  img,
+  image,
   author,
   published,
 }) => {
@@ -21,18 +21,25 @@ export const AnotherPost: FC<TAnotherPost> = ({
   } = useTranslation()
   return (
     <div className="another-post">
-      <Image src={img.url} alt={img.alt} className="another-post-img" />
+      <Image src={image.src} alt={image.alt} className="another-post-img" />
 
       <FlexColumn>
         <FlexRow>
-          <p className="meta">{author.name}</p>
+          {author.map(({ name, id }) => (
+            <p key={id} className="meta">
+              {name}
+            </p>
+          ))}
 
           <span>&#8226;</span>
           <p className="meta">{formatDate(published, language)}</p>
         </FlexRow>
 
         <p className="title">{title}</p>
-        <p className="text-preview">{`${text.substring(0, 150)}` + '...'}</p>
+        <p
+          className="text-preview"
+          dangerouslySetInnerHTML={{ __html: `${text.substring(0, 150)}...` }}
+        />
 
         <FlexRow wrap>
           {tags.map((tag, i) => (

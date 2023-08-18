@@ -1,36 +1,19 @@
 import { FC } from 'react'
 
 import { SecondaryPost, FirstPost, AnotherPost } from '@features'
-import { useFetchFeedQuery, TPost } from '@shared/api'
+import { useFeed } from '@shared/api'
 import './styles.scss'
 
 import { TDevidedPosts } from './types'
 import { FlexRow } from '@shared/ui'
 
-const mockPost: TPost = {
-  id: '',
-  title: '',
-  text: '',
-  published: '',
-  source: 'blogger',
-  tags: [],
-  author: {
-    name: '',
-    role: '',
-  },
-  img: {
-    url: '',
-    alt: '',
-  },
-}
-
 export const Feed: FC = () => {
-  const { data, isLoading } = useFetchFeedQuery()
+  const { data, loading } = useFeed()
 
   const { latest, other, seconds } = (data || []).reduce<TDevidedPosts>(
     (res, curr, i) => {
       if (i === 0) {
-        res['latest'] = curr
+        res['latest'] = [curr]
       } else if (i > 0 && i < 4) {
         res['seconds'] = [...(res['seconds'] || []), curr]
       } else {
@@ -40,7 +23,7 @@ export const Feed: FC = () => {
       return res
     },
     {
-      latest: mockPost,
+      latest: [],
       seconds: [],
       other: [],
     },
@@ -49,19 +32,21 @@ export const Feed: FC = () => {
   return (
     <FlexRow justify="center">
       <div className="feed-wrapper">
-        {isLoading ? (
+        {loading ? (
           // TODO replace text with true Loader
           <>Loading...</>
         ) : (
           <>
-            <FirstPost {...latest} />
+            {latest.map((post) => (
+              <FirstPost key={post.id} {...post} />
+            ))}
             <div className="secondary-column">
               {seconds.map((post) => (
-                <SecondaryPost {...post} />
+                <SecondaryPost key={post.id} {...post} />
               ))}
             </div>
             {other.map((post) => (
-              <AnotherPost {...post} />
+              <AnotherPost key={post.id} {...post} />
             ))}
           </>
         )}

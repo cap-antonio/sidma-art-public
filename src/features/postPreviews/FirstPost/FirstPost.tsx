@@ -11,7 +11,7 @@ import { TFirstPost } from './types'
 export const FirstPost: FC<TFirstPost> = ({
   text,
   title,
-  img,
+  image,
   author,
   tags,
   published,
@@ -22,17 +22,24 @@ export const FirstPost: FC<TFirstPost> = ({
 
   return (
     <div className="first-post">
-      <Image src={img.url} alt={img.alt} className="first-post-img" />
+      <Image src={image.src} alt={image.alt} className="first-post-img" />
 
       <FlexColumn>
         <FlexRow>
-          <p className="meta">{author.name}</p>
+          {author.map(({ name, id }) => (
+            <p key={id} className="meta">
+              {name}
+            </p>
+          ))}
           <span>&#8226;</span>
           <p className="meta">{formatDate(published, language)}</p>
         </FlexRow>
 
         <p className="title">{title}</p>
-        <p className="text-preview">{`${text.substring(0, 150)}...`}</p>
+        <p
+          className="text-preview"
+          dangerouslySetInnerHTML={{ __html: `${text.substring(0, 150)}...` }}
+        />
         <FlexRow wrap>
           {tags.map((tag, i) => (
             <div className="tag" key={tag + i}>
