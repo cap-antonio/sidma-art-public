@@ -1,11 +1,7 @@
 module.exports = {
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: [
-      'blogger.googleusercontent.com',
-      'img.freepik.com',
-      'www.vectornator.io',
-    ],
+    domains: ['blogger.googleusercontent.com', 'img.freepik.com', 'localhost'],
     // remotePatterns: [
     //   {
     //     protocol: 'https',

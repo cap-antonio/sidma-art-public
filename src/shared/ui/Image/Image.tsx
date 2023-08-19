@@ -10,7 +10,7 @@ export const Image: FC<TImage> = ({ className, ...rest }) => {
   const imageClassNames = classNames('image-wrapper', className)
   return (
     <div className={imageClassNames}>
-      <NextImage {...rest} fill objectFit="cover" />
+      <NextImage {...rest} fill className="image" unoptimized />
     </div>
   )
 }

@@ -1,36 +1,18 @@
 import { FC } from 'react'
 
 import { SecondaryPost, FirstPost, AnotherPost } from '@features'
-import { useFetchFeedQuery, TPost } from '@shared/api'
 import './styles.scss'
 import { FlexRow } from '@shared/ui'
-
+import { useFeed } from '@shared/api'
 import { TDividedPosts } from './types'
 
-const mockPost: TPost = {
-  id: '',
-  title: '',
-  text: '',
-  published: '',
-  source: 'blogger',
-  tags: [],
-  author: {
-    name: '',
-    role: '',
-  },
-  img: {
-    url: '',
-    alt: '',
-  },
-}
-
 export const Feed: FC = () => {
-  const { data, isLoading } = useFetchFeedQuery()
+  const { data } = useFeed()
 
-  const { first, other, seconds } = (data || []).reduce<TDividedPosts>(
+  const { latest, other, seconds } = (data || []).reduce<TDividedPosts>(
     (res, curr, i) => {
       if (i === 0) {
-        res['first'] = curr
+        res['latest'] = [curr]
       } else if (i > 0 && i < 4) {
         res['seconds'] = [...(res['seconds'] || []), curr]
       } else {
@@ -40,7 +22,7 @@ export const Feed: FC = () => {
       return res
     },
     {
-      first: mockPost,
+      latest: [],
       seconds: [],
       other: [],
     },
@@ -49,22 +31,17 @@ export const Feed: FC = () => {
   return (
     <FlexRow justify="center">
       <div className="feed-wrapper">
-        {isLoading ? (
-          // TODO replace text with true Loader
-          <>Loading...</>
-        ) : (
-          <>
-            <FirstPost {...first} />
-            <div className="secondary-column">
-              {seconds.map((post) => (
-                <SecondaryPost {...post} />
-              ))}
-            </div>
-            {other.map((post) => (
-              <AnotherPost {...post} />
-            ))}
-          </>
-        )}
+        {latest.map((post) => (
+          <FirstPost key={post.id} {...post} />
+        ))}
+        <div className="secondary-column">
+          {seconds.map((post) => (
+            <SecondaryPost key={post.id} {...post} />
+          ))}
+        </div>
+        {other.map((post) => (
+          <AnotherPost key={post.id} {...post} />
+        ))}
       </div>
     </FlexRow>
   )

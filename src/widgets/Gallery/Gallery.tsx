@@ -1,7 +1,6 @@
 import { FC } from 'react'
 
 import './styles.scss'
-import { useFetchFeedQuery } from '@shared/api'
 import { CategoryCard } from '@features'
 import { FlexRow } from '@shared/ui'
 
@@ -36,12 +35,10 @@ const mockedData = [
 ]
 
 export const Gallery: FC = () => {
-  const { isLoading } = useFetchFeedQuery()
-
   return (
     <FlexRow justify="center">
       <div className="category-wrapper">
-        {isLoading ? (
+        {true ? (
           // TODO replace text with true Loader
           <>Loading...</>
         ) : (

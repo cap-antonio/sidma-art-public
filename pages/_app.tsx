@@ -1,23 +1,23 @@
 import { BaseLayout } from '@processes'
 import { store } from '@shared/store'
-// import Axios from "axios"
 import type { AppProps } from 'next/app'
 import '@shared/styles/global.scss'
 
 // import "../i18n"
 import { Provider } from 'react-redux'
-
-// const baseURL = process.env.NEXT_PUBLIC_ENV_VARIABLE
-
-// Axios.defaults.baseURL = baseURL
+import { ApolloProvider } from '@apollo/client'
+import { useApollo } from '../apollo-client'
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const apolloClient = useApollo(pageProps)
   return (
-    <Provider store={store}>
-      <BaseLayout>
-        <Component {...pageProps} />
-      </BaseLayout>
-    </Provider>
+    <ApolloProvider client={apolloClient}>
+      <Provider store={store}>
+        <BaseLayout>
+          <Component {...pageProps} />
+        </BaseLayout>
+      </Provider>
+    </ApolloProvider>
   )
 }
 
