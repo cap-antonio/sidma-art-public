@@ -11,3 +11,7 @@ export enum Pages {
   shop = '/shop',
   blog = '/blog',
 }
+
+export type TPageInitialData<Data> = {
+  initialData: Data
+}

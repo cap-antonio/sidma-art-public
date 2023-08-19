@@ -36,7 +36,7 @@ export const AnotherPost: FC<TAnotherPost> = ({
         </FlexRow>
 
         <p className="title">{title}</p>
-        <p
+        <div
           className="text-preview"
           dangerouslySetInnerHTML={{ __html: `${text.substring(0, 150)}...` }}
         />

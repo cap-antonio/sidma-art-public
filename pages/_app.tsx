@@ -6,15 +6,12 @@ import '@shared/styles/global.scss'
 // import "../i18n"
 import { Provider } from 'react-redux'
 import { ApolloProvider } from '@apollo/client'
-import client from '../apollo-client'
-
-// const baseURL = process.env.NEXT_PUBLIC_ENV_VARIABLE
-
-// Axios.defaults.baseURL = baseURL
+import { useApollo } from '../apollo-client'
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const apolloClient = useApollo(pageProps)
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apolloClient}>
       <Provider store={store}>
         <BaseLayout>
           <Component {...pageProps} />

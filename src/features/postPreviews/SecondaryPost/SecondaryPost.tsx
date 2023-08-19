@@ -34,7 +34,7 @@ export const SecondaryPost: FC<TSecondaryPost> = ({
           <p className="meta">{formatDate(published, language)}</p>
         </FlexRow>
         <p className="title">{title}</p>
-        <p
+        <div
           className="text-preview"
           dangerouslySetInnerHTML={{ __html: `${text.substring(0, 150)}...` }}
         />
