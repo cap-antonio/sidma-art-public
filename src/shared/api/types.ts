@@ -1,7 +1,7 @@
 export type TDirectusImage = {
   id: string
 }
-export type TDirecturAuthor = {
+export type TDirectusAuthor = {
   authors_id: {
     id: string
     name: string

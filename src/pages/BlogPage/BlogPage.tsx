@@ -1,16 +1,12 @@
 import { FC } from 'react'
 import { PageHeader } from '@entities'
-import dynamic from 'next/dynamic'
-
-const FeedComponent = dynamic(() => import('../../widgets/Feed'), {
-  ssr: false,
-})
+import { Feed } from '@widgets'
 
 export const BlogPage: FC = () => {
   return (
     <div>
       <PageHeader>Блог</PageHeader>
-      <FeedComponent />
+      <Feed />
     </div>
   )
 }

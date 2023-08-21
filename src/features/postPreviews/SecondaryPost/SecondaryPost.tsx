@@ -9,7 +9,7 @@ import { formatDate } from '@shared/utils'
 import { TSecondaryPost } from './types'
 
 export const SecondaryPost: FC<TSecondaryPost> = ({
-  text,
+  previewText,
   title,
   image,
   author,
@@ -34,10 +34,7 @@ export const SecondaryPost: FC<TSecondaryPost> = ({
           <p className="meta">{formatDate(published, language)}</p>
         </FlexRow>
         <p className="title">{title}</p>
-        <div
-          className="text-preview"
-          dangerouslySetInnerHTML={{ __html: `${text.substring(0, 150)}...` }}
-        />
+        <p className="text-preview">{previewText}</p>
         <FlexRow wrap>
           {tags.map((tag, i) => (
             <div className="tag" key={tag + i}>

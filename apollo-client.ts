@@ -15,9 +15,9 @@ const directusBaseURL =
 import { useMemo } from 'react'
 import {
   ApolloClient,
-  HttpLink,
   InMemoryCache,
   NormalizedCacheObject,
+  createHttpLink,
 } from '@apollo/client'
 import { AppProps } from 'next/app'
 
@@ -28,9 +28,12 @@ let apolloClient: ApolloClient<NormalizedCacheObject> | undefined
 export const createApolloClient = () => {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
-    link: new HttpLink({
+    link: createHttpLink({
       uri: `${directusBaseURL}/graphql`, // Server URL (must be absolute)
       credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
+      // headers: {
+      //   cookie: req.header('Cookie'),
+      // },
     }),
     cache: new InMemoryCache({
       // typePolicies is not required to use Apollo with Next.js - only for doing pagination.
@@ -76,16 +79,16 @@ export const initializeApollo = (
   return _apolloClient
 }
 
-export const addApolloState = (
-  client: ApolloClient<NormalizedCacheObject>,
-  pageProps: AppProps['pageProps'],
-) => {
-  if (pageProps?.props) {
-    pageProps.props[initialApolloStateName] = client.cache.extract()
-  }
+// export const addApolloState = (
+//   client: ApolloClient<NormalizedCacheObject>,
+//   pageProps: AppProps['pageProps'],
+// ) => {
+//   if (pageProps?.props) {
+//     pageProps.props[initialApolloStateName] = client.cache.extract()
+//   }
 
-  return pageProps
-}
+//   return pageProps
+// }
 
 export const useApollo = (pageProps: AppProps['pageProps']) => {
   const state = pageProps[initialApolloStateName]

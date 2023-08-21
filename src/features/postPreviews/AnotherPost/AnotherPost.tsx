@@ -10,11 +10,11 @@ import { useTranslation } from 'react-i18next'
 
 export const AnotherPost: FC<TAnotherPost> = ({
   tags,
-  text,
   title,
   image,
   author,
   published,
+  previewText,
 }) => {
   const {
     i18n: { language },
@@ -36,10 +36,7 @@ export const AnotherPost: FC<TAnotherPost> = ({
         </FlexRow>
 
         <p className="title">{title}</p>
-        <div
-          className="text-preview"
-          dangerouslySetInnerHTML={{ __html: `${text.substring(0, 150)}...` }}
-        />
+        <p className="text-preview">{previewText}</p>
 
         <FlexRow wrap>
           {tags.map((tag, i) => (

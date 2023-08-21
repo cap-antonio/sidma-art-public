@@ -13,6 +13,7 @@ export const feedListQuery = gql`
       title
       tags
       published
+      preview_text
       image {
         id
       }
@@ -35,6 +36,7 @@ const prepareFeed = (feed?: Array<TDirectusPost>): Array<TPost> => {
         ...post,
         author,
         image: prepareImage(post.image.id, post.title),
+        previewText: post.preview_text,
       }
     }) ?? []
   )

@@ -1,1 +1,1 @@
-export { Feed as default } from './Feed'
+export { Feed } from './Feed'
