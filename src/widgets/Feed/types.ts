@@ -1,3 +1,3 @@
 import { TPost } from '@shared/api'
 
-export type TDevidedPosts = Record<'other' | 'seconds' | 'latest', Array<TPost>>
+export type TDividedPosts = Record<'other' | 'seconds' | 'latest', Array<TPost>>
