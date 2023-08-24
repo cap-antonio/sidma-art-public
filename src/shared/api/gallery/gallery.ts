@@ -9,7 +9,7 @@ export const galleryListQuery = gql`
   query Gallery {
     gallery {
       id
-      name
+      title
       description
       image {
         id
