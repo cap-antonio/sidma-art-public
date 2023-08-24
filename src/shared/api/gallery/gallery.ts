@@ -2,14 +2,14 @@ import { gql, useQuery } from '@apollo/client'
 
 import { prepareImage } from '../helpers'
 
-import { TDirectuResponse } from '../types'
+import { TDirectusResponse } from '../types'
 import { TDirectusGallery } from './types'
 
-const galleryListQuery = gql`
+export const galleryListQuery = gql`
   query Gallery {
     gallery {
       id
-      name
+      title
       description
       image {
         id
@@ -20,7 +20,7 @@ const galleryListQuery = gql`
 
 export const useGallery = () => {
   const { data, ...rest } = useQuery<
-    TDirectuResponse<'gallery', Array<TDirectusGallery>>
+    TDirectusResponse<'gallery', Array<TDirectusGallery>>
   >(
     galleryListQuery,
     // {

@@ -6,7 +6,7 @@ import {} from '@shared/ui'
 
 export const CategoryCard: FC<TCategoryCard> = ({
   id,
-  name,
+  title,
   description,
   image,
 }) => {
@@ -22,7 +22,7 @@ export const CategoryCard: FC<TCategoryCard> = ({
         </div>
 
         <FlexColumn>
-          <p className="name">{name}</p>
+          <p className="name">{title}</p>
           {description && (
             <p className="description">
               {`${description.substring(0, 150)}` + '...'}

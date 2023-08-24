@@ -10,4 +10,4 @@ export type TDirectusAuthor = {
   }
 }
 
-export type TDirectuResponse<Key extends string, Data> = Record<Key, Data>
+export type TDirectusResponse<Key extends string, Data> = Record<Key, Data>

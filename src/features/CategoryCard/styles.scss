@@ -5,6 +5,7 @@
   cursor: pointer;
   overflow: hidden;
   transition: box-shadow 0.3s;
+  min-width: 300px;
 
   @include sm {
     display: flex;

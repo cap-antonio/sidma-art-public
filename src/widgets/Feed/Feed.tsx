@@ -3,14 +3,14 @@ import { FC } from 'react'
 import { SecondaryPost, FirstPost, AnotherPost } from '@features'
 import './styles.scss'
 
-import { TDevidedPosts } from './types'
+import { TDividedPosts } from './types'
 import { FlexRow } from '@shared/ui'
 import { useFeed } from '@shared/api'
 
 export const Feed: FC = () => {
   const { data } = useFeed()
 
-  const { latest, other, seconds } = (data || []).reduce<TDevidedPosts>(
+  const { latest, other, seconds } = (data || []).reduce<TDividedPosts>(
     (res, curr, i) => {
       if (i === 0) {
         res['latest'] = [curr]
