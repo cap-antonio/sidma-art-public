@@ -10,11 +10,11 @@ export const Header: FC = () => {
   const openDrawer = () => dispatch(toggleDrawer())
 
   return (
-    <nav className="header">
+    <header className="header">
       <NavigationLinks />
       <div className="burger-wrapper">
         <IconButton iconName="Burger" onClick={openDrawer} />
       </div>
-    </nav>
+    </header>
   )
 }

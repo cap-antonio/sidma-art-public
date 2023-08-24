@@ -3,11 +3,11 @@ import Head from 'next/head'
 
 export const ShopPage: FC = () => {
   return (
-    <div>
+    <section>
       <Head>
         <title>Shop</title>
       </Head>
       Магазин
-    </div>
+    </section>
   )
 }

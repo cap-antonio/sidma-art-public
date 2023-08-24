@@ -30,12 +30,12 @@ export const NavigationLinks: FC<TNavigationLinks> = ({ kind = 'header' }) => {
     kind === 'header' ? 'header-wrapper' : 'drawer-wrapper'
 
   return (
-    <div className={styledNavigationLinks}>
+    <nav className={styledNavigationLinks}>
       {links.map(({ path, title }) => (
         <Link key={path} href={path}>
           {title}
         </Link>
       ))}
-    </div>
+    </nav>
   )
 }

@@ -7,7 +7,7 @@ import './styles.scss'
 
 export const ContactsPage: FC = () => {
   return (
-    <div>
+    <section>
       <Head>
         <title>Contacts</title>
       </Head>
@@ -20,6 +20,6 @@ export const ContactsPage: FC = () => {
           <Button className="margin">Submit</Button>
         </div>
       </PageBlock>
-    </div>
+    </section>
   )
 }

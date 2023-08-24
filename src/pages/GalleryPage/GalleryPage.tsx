@@ -5,12 +5,12 @@ import Head from 'next/head'
 
 export const GalleryPage: FC = () => {
   return (
-    <div>
+    <section>
       <Head>
         <title>Gallery</title>
       </Head>
       <PageHeader>Gallery</PageHeader>
       <Gallery />
-    </div>
+    </section>
   )
 }

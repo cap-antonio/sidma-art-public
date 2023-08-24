@@ -23,13 +23,13 @@ export const Drawer: FC = () => {
   })
 
   return (
-    <div className={drawerClassNames}>
+    <aside className={drawerClassNames}>
       <div className="drawer-header">
         <div className="close-button-wrapper">
           <IconButton iconName="Close" onClick={closeDrawer} />
         </div>
       </div>
       <div className="drawer-body">{contents[content]}</div>
-    </div>
+    </aside>
   )
 }
