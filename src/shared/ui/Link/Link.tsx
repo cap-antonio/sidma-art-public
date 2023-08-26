@@ -10,9 +10,12 @@ export const Link: FC<PropsWithChildren<TLink>> = ({
   href,
   children,
   className,
+  noHover,
   ...rest
 }) => {
-  const linkClassNames = classNames('custom-link', className)
+  const linkClassNames = classNames('custom-link', className, {
+    'no-hover': noHover,
+  })
   return (
     <NextLink href={href} {...rest} className={linkClassNames}>
       {children}

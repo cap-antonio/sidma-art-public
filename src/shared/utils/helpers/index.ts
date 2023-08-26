@@ -7,3 +7,8 @@ export const debounce = <T extends Function>(fn: T, delay: number) => {
     timer = setTimeout(() => fn(...args), delay)
   }
 }
+
+export const capitalizeFirstCharacter = (string: string): string => {
+  if (!string) return ''
+  return string.trim().charAt(0).toUpperCase() + string.trim().slice(1)
+}

@@ -1,2 +1,2 @@
 export * from './postPreviews'
-export * from './CategoryCard'
+export * from './GalleryCard'

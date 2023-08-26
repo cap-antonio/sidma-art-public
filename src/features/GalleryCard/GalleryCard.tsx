@@ -1,17 +1,18 @@
 import { FC } from 'react'
 import './styles.scss'
 import { FlexColumn, Image, Link } from '@shared/ui'
-import { TCategoryCard } from './types'
+import { TGalleryCard } from './types'
 import {} from '@shared/ui'
+import { capitalizeFirstCharacter } from '@shared/utils/helpers'
 
-export const CategoryCard: FC<TCategoryCard> = ({
+export const GalleryCard: FC<TGalleryCard> = ({
   id,
   title,
   description,
   image,
 }) => {
   return (
-    <Link href={`/category/${id}`}>
+    <Link href={`/category/${id}`} noHover>
       <div className="category-card">
         <div className="image-container">
           <Image
@@ -22,10 +23,11 @@ export const CategoryCard: FC<TCategoryCard> = ({
         </div>
 
         <FlexColumn>
-          <p className="name">{title}</p>
+          <p className="name">{capitalizeFirstCharacter(title)}</p>
           {description && (
             <p className="description">
-              {`${description.substring(0, 150)}` + '...'}
+              {`${capitalizeFirstCharacter(description).substring(0, 150)}` +
+                (description.length > 150 && '...')}
             </p>
           )}
         </FlexColumn>
