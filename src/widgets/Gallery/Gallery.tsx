@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import './styles.scss'
-import { CategoryCard } from '@features'
+import { GalleryCard } from '@features'
 import { FlexRow } from '@shared/ui'
 import { useGallery } from '@shared/api'
 
@@ -17,7 +17,7 @@ export const Gallery: FC = () => {
         ) : (
           <>
             {data?.map((category, i) => (
-              <CategoryCard key={i} {...category} />
+              <GalleryCard key={i} {...category} />
             ))}
           </>
         )}
