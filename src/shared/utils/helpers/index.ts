@@ -8,7 +8,10 @@ export const debounce = <T extends Function>(fn: T, delay: number) => {
   }
 }
 
-export const capitalizeFirstCharacter = (string: string): string => {
-  if (!string) return ''
-  return string.trim().charAt(0).toUpperCase() + string.trim().slice(1)
+export const capitalizeFirstCharacter = (str: string): string => {
+  return str.trim().charAt(0).toUpperCase() + str.trim().slice(1)
+}
+
+export const truncateString = (str: string, maxLength = 150): string => {
+  return str.length <= maxLength ? str : `${str.substring(0, maxLength)}...`
 }

@@ -3,7 +3,7 @@ import './styles.scss'
 import { FlexColumn, Image, Link } from '@shared/ui'
 import { TGalleryCard } from './types'
 import {} from '@shared/ui'
-import { capitalizeFirstCharacter } from '@shared/utils/helpers'
+import { capitalizeFirstCharacter, truncateString } from '@shared/utils/helpers'
 
 export const GalleryCard: FC<TGalleryCard> = ({
   id,
@@ -12,7 +12,7 @@ export const GalleryCard: FC<TGalleryCard> = ({
   image,
 }) => {
   return (
-    <Link href={`/category/${id}`} noHover>
+    <Link href={`/category/${id}`} className="no-hover">
       <div className="category-card">
         <div className="image-container">
           <Image
@@ -26,8 +26,7 @@ export const GalleryCard: FC<TGalleryCard> = ({
           <p className="name">{capitalizeFirstCharacter(title)}</p>
           {description && (
             <p className="description">
-              {`${capitalizeFirstCharacter(description).substring(0, 150)}` +
-                (description.length > 150 && '...')}
+              {truncateString(capitalizeFirstCharacter(description), 150)}
             </p>
           )}
         </FlexColumn>
