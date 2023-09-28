@@ -9,9 +9,9 @@ import { formatDate } from '@shared/utils'
 import { TSecondaryPost } from './types'
 
 export const SecondaryPost: FC<TSecondaryPost> = ({
-  text,
+  previewText,
   title,
-  img,
+  image,
   author,
   tags,
   published,
@@ -21,16 +21,20 @@ export const SecondaryPost: FC<TSecondaryPost> = ({
   } = useTranslation()
   return (
     <div className="secondary-post">
-      <Image src={img.url} alt={img.alt} className="secondary-post-img" />
+      <Image src={image.src} alt={image.alt} className="secondary-post-img" />
 
       <FlexColumn>
         <FlexRow>
-          <p className="meta">{author.name}</p>
+          {author.map(({ name, id }) => (
+            <p key={id} className="meta">
+              {name}
+            </p>
+          ))}
           <span>&#8226;</span>
           <p className="meta">{formatDate(published, language)}</p>
         </FlexRow>
         <p className="title">{title}</p>
-        <p className="text-preview">{`${text.substring(0, 150)}...`}</p>
+        <p className="text-preview">{previewText}</p>
         <FlexRow wrap>
           {tags.map((tag, i) => (
             <div className="tag" key={tag + i}>

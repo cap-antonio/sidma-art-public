@@ -1,2 +1,2 @@
-export * from './api'
-export * from './types'
+export * from './blog'
+export * from './gallery'

@@ -23,8 +23,8 @@ Run the command `yarn` for dependencies installation.
 
 For managing content is being used Headless CMS Directus, that is temporary
 available locally only.
-Clone the [repo](https://github.com/cap-antonio/sidma-art-directus) and apply
-steps from README.
+Clone the [repo](https://github.com/cap-antonio/sidma-art-directus) (request
+an access if needed) and apply steps from README.
 
 ## Code-style guide
 

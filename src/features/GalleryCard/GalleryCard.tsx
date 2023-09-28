@@ -2,15 +2,17 @@ import { FC } from 'react'
 import './styles.scss'
 import { FlexColumn, Image, Link } from '@shared/ui'
 import { TGalleryCard } from './types'
+import {} from '@shared/ui'
+import { capitalizeFirstCharacter, truncateString } from '@shared/utils/helpers'
 
-export const GalleryCard: FC<TGalleryCard> = ({ name, description, image }) => {
-  const truncatedDescription =
-    description && description.length > 150
-      ? description.substring(0, 150) + '...'
-      : description
-
+export const GalleryCard: FC<TGalleryCard> = ({
+  id,
+  title,
+  description,
+  image,
+}) => {
   return (
-    <Link href={`/category/${name}`}>
+    <Link href={`/category/${id}`} className="no-hover">
       <div className="category-card">
         <div className="image-container">
           <Image
@@ -21,9 +23,11 @@ export const GalleryCard: FC<TGalleryCard> = ({ name, description, image }) => {
         </div>
 
         <FlexColumn>
-          <p className="name">{name}</p>
-          {truncatedDescription && (
-            <p className="description">{truncatedDescription}</p>
+          <p className="name">{capitalizeFirstCharacter(title)}</p>
+          {description && (
+            <p className="description">
+              {truncateString(capitalizeFirstCharacter(description), 150)}
+            </p>
           )}
         </FlexColumn>
       </div>
