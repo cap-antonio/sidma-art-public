@@ -1,5 +1,5 @@
 export * from './Header'
 export * from './Feed'
+export * from './Galleries'
 export * from './Gallery'
-export * from './GalleryCategory'
 export * from './FiltersColumn'

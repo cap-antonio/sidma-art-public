@@ -1,6 +1,6 @@
 @import 'src/shared/styles/index.scss';
 
-.category-card {
+.gallery-card {
   position: relative;
   cursor: pointer;
   overflow: hidden;
@@ -24,7 +24,7 @@
     height: 350px;
     overflow: hidden;
 
-    .category-card-img {
+    .gallery-card-img {
       width: 100%;
       height: 350px;
       object-fit: cover;

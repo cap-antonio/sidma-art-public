@@ -6,20 +6,15 @@ import {} from '@shared/ui'
 import { capitalizeFirstCharacter, truncateString } from '@shared/utils/helpers'
 
 export const GalleryCard: FC<TGalleryCard> = ({
-  id,
   title,
   description,
   image,
 }) => {
   return (
-    <Link href={`/category/${id}`} className="no-hover">
-      <div className="category-card">
+    <Link href={`/gallery/${title}`} className="no-hover">
+      <div className="gallery-card">
         <div className="image-container">
-          <Image
-            src={image.src}
-            alt={image.alt}
-            className="category-card-img"
-          />
+          <Image src={image.src} alt={image.alt} className="gallery-card-img" />
         </div>
 
         <FlexColumn>

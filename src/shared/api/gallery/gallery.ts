@@ -31,6 +31,7 @@ export const useGallery = () => {
   const preparedGallery = data?.gallery.map((gallery) => {
     return {
       ...gallery,
+      title: gallery.title.trim(),
       image: prepareImage(gallery.image.id, gallery.title),
     }
   })

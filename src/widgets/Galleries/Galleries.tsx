@@ -1,21 +1,24 @@
 import { FC } from 'react'
 
 import './styles.scss'
+import { GalleryCard } from '@features'
 import { FlexRow } from '@shared/ui'
-import { TGalleryCategory } from './types'
+import { useGallery } from '@shared/api'
 
-export const GalleryCategory: FC<TGalleryCategory> = () => {
+export const Galleries: FC = () => {
+  const { data, loading } = useGallery()
+
   return (
     <FlexRow justify="center">
       <div className="category-wrapper">
-        {true ? (
+        {loading ? (
           // TODO replace text with true Loader
           <>Loading...</>
         ) : (
           <>
-            {/* {items.map((item, i) => (
-              <ItemCard key={i} {...item} />
-            ))} */}
+            {data?.map((category, i) => (
+              <GalleryCard key={i} {...category} />
+            ))}
           </>
         )}
       </div>

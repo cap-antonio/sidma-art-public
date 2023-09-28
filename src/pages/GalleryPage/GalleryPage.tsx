@@ -1,16 +1,24 @@
 import { FC } from 'react'
+import { FiltersColumn, Gallery } from '@widgets'
+import { useRouter } from 'next/router'
+
+import './styles.scss'
 import { PageHeader } from '@entities'
-import { Gallery } from '@widgets'
-import Head from 'next/head'
 
 export const GalleryPage: FC = () => {
+  const router = useRouter()
+  const { name } = router.query
+
   return (
     <section>
-      <Head>
-        <title>Gallery</title>
-      </Head>
-      <PageHeader>Gallery</PageHeader>
-      <Gallery />
+      <PageHeader>{name}</PageHeader>
+      <div
+        className="wrapper"
+        style={{ display: 'flex', flexDirection: 'row' }}
+      >
+        <FiltersColumn />
+        <Gallery />
+      </div>
     </section>
   )
 }
