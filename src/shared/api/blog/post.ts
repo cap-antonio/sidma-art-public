@@ -2,7 +2,7 @@ import { gql, useQuery } from '@apollo/client'
 
 import { prepareImage } from '../helpers'
 
-import { TDirectusPost } from './types'
+import { TDirectusPost, TPost } from './types'
 import { TDirectuResponse } from '../types'
 
 const postQuery = gql`
@@ -27,6 +27,18 @@ const postQuery = gql`
   }
 `
 
+const preparePost = (post?: TDirectusPost): TPost | undefined => {
+  return post
+    ? {
+        ...post,
+        author: post.author.map(({ authors_id }) => ({
+          ...authors_id,
+        })),
+        image: prepareImage(post.image.id, post.title),
+      }
+    : undefined
+}
+
 export const usePost = (id: string) => {
   const { data, ...rest } = useQuery<
     TDirectuResponse<'feed_by_id', TDirectusPost>
@@ -36,12 +48,5 @@ export const usePost = (id: string) => {
     },
   })
 
-  const preparedPost = data
-    ? {
-        ...data?.feed_by_id,
-        image: prepareImage(data?.feed_by_id.image.id, data?.feed_by_id.title),
-      }
-    : {}
-
-  return { data: preparedPost, ...rest }
+  return { data: preparePost(data?.feed_by_id), ...rest }
 }
