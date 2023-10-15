@@ -1,7 +1,7 @@
 export type TDirectusImage = {
   id: string
 }
-export type TDirecturAuthor = {
+export type TDirectusAuthor = {
   authors_id: {
     id: string
     name: string
@@ -10,4 +10,4 @@ export type TDirecturAuthor = {
   }
 }
 
-export type TDirectuResponse<Key extends string, Data> = Record<Key, Data>
+export type TDirectusResponse<Key extends string, Data> = Record<Key, Data>

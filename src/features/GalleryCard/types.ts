@@ -1,6 +1,6 @@
-export type TCategoryCard = {
+export type TGalleryCard = {
   id: string
-  name: string
+  title: string
   description?: string
   image: { src: string; alt: string }
 }

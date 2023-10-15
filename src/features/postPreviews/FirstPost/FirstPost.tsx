@@ -11,7 +11,7 @@ import { TFirstPost } from './types'
 import { Pages } from '@shared/types'
 
 export const FirstPost: FC<TFirstPost> = ({
-  text,
+  previewText,
   title,
   image,
   author,
@@ -44,10 +44,7 @@ export const FirstPost: FC<TFirstPost> = ({
         </FlexRow>
 
         <p className="title">{title}</p>
-        <div
-          className="text-preview"
-          dangerouslySetInnerHTML={{ __html: `${text.substring(0, 150)}...` }}
-        />
+        <p className="text-preview">{previewText}</p>
         <FlexRow wrap>
           {tags.map((tag, i) => (
             <div className="tag" key={tag + i}>

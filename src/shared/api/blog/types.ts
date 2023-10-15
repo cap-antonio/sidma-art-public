@@ -1,4 +1,4 @@
-import { TDirecturAuthor, TDirectusImage } from '../types'
+import { TDirectusAuthor, TDirectusImage } from '../types'
 
 export type TPost = {
   id: string
@@ -18,6 +18,7 @@ export type TPost = {
     src: string
     alt: string
   }
+  previewText: string
 }
 export type TDirectusPost = {
   id: string
@@ -26,6 +27,7 @@ export type TDirectusPost = {
   published: string
   source: 'instagram' | 'blogger'
   tags: Array<string>
-  author: Array<TDirecturAuthor>
+  author: Array<TDirectusAuthor>
   image: TDirectusImage
+  preview_text: string
 }

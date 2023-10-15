@@ -1,12 +1,16 @@
 import { FC } from 'react'
 import { PageBlock, PageHeader } from '@entities'
 import { Button, Input, Textarea } from '@shared/ui'
+import Head from 'next/head'
 
 import './styles.scss'
 
 export const ContactsPage: FC = () => {
   return (
-    <div>
+    <section>
+      <Head>
+        <title>Contacts</title>
+      </Head>
       <PageHeader>Контакты</PageHeader>
       <PageBlock>
         <div className="form-wrapper">
@@ -16,6 +20,6 @@ export const ContactsPage: FC = () => {
           <Button className="margin">Submit</Button>
         </div>
       </PageBlock>
-    </div>
+    </section>
   )
 }

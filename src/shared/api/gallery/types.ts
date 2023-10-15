@@ -7,6 +7,14 @@ export type TDirectusGallery = {
   image: TDirectusImage
 }
 
+export type TDirectusGalleryItem = {
+  id: string
+  title: string
+  description?: string
+  // TODO: Array<enums>
+  variants: Array<string>
+}
+
 export type TGallery = {
   id: string
   title: string

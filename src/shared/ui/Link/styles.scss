@@ -11,3 +11,9 @@
     color: $green;
   }
 }
+
+.no-hover {
+  &:hover {
+    color: $black;
+  }
+}
