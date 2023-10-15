@@ -24,3 +24,8 @@ export type TGallery = {
     alt: string
   }
 }
+
+export type TDirectusDictionary = {
+  id: string
+  title: string
+}
