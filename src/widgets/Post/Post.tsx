@@ -1,12 +1,12 @@
-import './styles.scss'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
 
-import '../../features/postPreviews/styles.scss'
 import { usePost } from '@shared/api'
 import { FlexRow } from '@shared/ui'
-import { useRouter } from 'next/router'
-import { FC } from 'react'
 import { formatDate } from '@shared/utils'
-import { useTranslation } from 'react-i18next'
+
+import './styles.scss'
 
 export const Post: FC = ({}) => {
   const { id } = useRouter().query as { id: string }
@@ -14,12 +14,10 @@ export const Post: FC = ({}) => {
   const {
     i18n: { language },
   } = useTranslation()
-  console.log(data?.text)
+
   return (
     <div className="post">
-      {!data ? (
-        <>Loading...</>
-      ) : (
+      {data ? (
         <>
           <FlexRow
             justify="center"
@@ -29,7 +27,6 @@ export const Post: FC = ({}) => {
             <div className="post-title">
               <div className="date">
                 <p className="meta">{formatDate(data.published, language)}</p>
-                <span>&#8226;</span>
               </div>
               <h1 className="data-title">{data.title}</h1>
               <div className="text-preview"> {data.preview} </div>
@@ -45,15 +42,16 @@ export const Post: FC = ({}) => {
               <img src={data.image.src} alt={data.image.alt} />
             </div>
           </FlexRow>
-          <FlexRow justify="center" align-items="center">
+          <FlexRow justify="center" align-items="center" className="post-text">
             <div
-              className="post-text"
               dangerouslySetInnerHTML={{
-                __html: `${data.text}`,
+                __html: data.text,
               }}
             />
           </FlexRow>
         </>
+      ) : (
+        <>Loading...</>
       )}
     </div>
   )
