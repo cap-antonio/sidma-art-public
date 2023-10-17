@@ -24,13 +24,11 @@
     .post-title {
       display: block;
 
-      margin-block: auto;
-      padding-left: 50px;
+      margin: auto;
       width: 50%;
 
       @include lg {
         width: 100%;
-        padding-left: 0;
       }
 
       .author {
