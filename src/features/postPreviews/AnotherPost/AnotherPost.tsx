@@ -1,12 +1,14 @@
 import { FC } from 'react'
+import { useRouter } from 'next/router'
+import { useTranslation } from 'react-i18next'
 
+import { formatDate } from '@shared/utils'
 import './styles.scss'
 import '../styles.scss'
 import { FlexRow, FlexColumn, Image } from '@shared/ui'
 
 import { TAnotherPost } from './types'
-import { formatDate } from '@shared/utils'
-import { useTranslation } from 'react-i18next'
+import { Pages } from '@shared/types'
 
 export const AnotherPost: FC<TAnotherPost> = ({
   tags,
@@ -14,13 +16,19 @@ export const AnotherPost: FC<TAnotherPost> = ({
   image,
   author,
   published,
+  id: postId,
   previewText,
 }) => {
   const {
     i18n: { language },
   } = useTranslation()
+  const { push } = useRouter()
+
+  const handleClick = () => {
+    push(`${Pages.blog}/${postId}`)
+  }
   return (
-    <div className="another-post">
+    <div className="another-post" onClick={handleClick}>
       <Image src={image.src} alt={image.alt} className="another-post-img" />
 
       <FlexColumn>

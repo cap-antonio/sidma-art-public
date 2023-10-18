@@ -2,10 +2,10 @@ import { FC } from 'react'
 
 import { SecondaryPost, FirstPost, AnotherPost } from '@features'
 import './styles.scss'
-
-import { TDividedPosts } from './types'
 import { FlexRow } from '@shared/ui'
 import { useFeed } from '@shared/api'
+
+import { TDividedPosts } from './types'
 
 export const Feed: FC = () => {
   const { data } = useFeed()
