@@ -1,34 +1,19 @@
 import { FC } from 'react'
-import { Container, PostsWrapper, SecondaryColumn } from './styles'
-import { SecondaryPost, FirstPost, AnotherPost } from 'src/features'
-import { useFetchFeedQuery, TPost } from 'src/shared/api'
 
-import { TDevidedPosts } from './types'
+import { SecondaryPost, FirstPost, AnotherPost } from '@features'
+import './styles.scss'
+import { FlexRow } from '@shared/ui'
+import { useFeed } from '@shared/api'
 
-const mockPost: TPost = {
-  id: '',
-  title: '',
-  text: '',
-  published: '',
-  source: 'blogger',
-  tags: [],
-  author: {
-    name: '',
-    role: '',
-  },
-  img: {
-    url: '',
-    alt: '',
-  },
-}
+import { TDividedPosts } from './types'
 
 export const Feed: FC = () => {
-  const { data, isLoading } = useFetchFeedQuery()
+  const { data } = useFeed()
 
-  const { latest, other, seconds } = (data || []).reduce<TDevidedPosts>(
+  const { latest, other, seconds } = (data || []).reduce<TDividedPosts>(
     (res, curr, i) => {
       if (i === 0) {
-        res['latest'] = curr
+        res['latest'] = [curr]
       } else if (i > 0 && i < 4) {
         res['seconds'] = [...(res['seconds'] || []), curr]
       } else {
@@ -38,32 +23,27 @@ export const Feed: FC = () => {
       return res
     },
     {
-      latest: mockPost,
+      latest: [],
       seconds: [],
       other: [],
     },
   )
 
   return (
-    <Container>
-      <PostsWrapper>
-        {isLoading ? (
-          // TODO replace text with true Loader
-          <>Loading...</>
-        ) : (
-          <>
-            <FirstPost {...latest} />
-            <SecondaryColumn>
-              {seconds.map((post) => (
-                <SecondaryPost {...post} />
-              ))}
-            </SecondaryColumn>
-            {other.map((post) => (
-              <AnotherPost {...post} />
-            ))}
-          </>
-        )}
-      </PostsWrapper>
-    </Container>
+    <FlexRow justify="center">
+      <div className="feed-wrapper">
+        {latest.map((post) => (
+          <FirstPost key={post.id} {...post} />
+        ))}
+        <div className="secondary-column">
+          {seconds.map((post) => (
+            <SecondaryPost key={post.id} {...post} />
+          ))}
+        </div>
+        {other.map((post) => (
+          <AnotherPost key={post.id} {...post} />
+        ))}
+      </div>
+    </FlexRow>
   )
 }

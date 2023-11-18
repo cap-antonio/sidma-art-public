@@ -1,13 +1,16 @@
 import { FC } from 'react'
-import { StyledBlogPage } from './styles'
-import { PageHeader } from 'src/entities'
-import { Feed } from 'src/widgets'
+import { PageHeader } from '@entities'
+import { Feed } from '@widgets'
+import Head from 'next/head'
 
 export const BlogPage: FC = () => {
   return (
-    <StyledBlogPage>
+    <section>
+      <Head>
+        <title>Blog</title>
+      </Head>
       <PageHeader>Блог</PageHeader>
       <Feed />
-    </StyledBlogPage>
+    </section>
   )
 }

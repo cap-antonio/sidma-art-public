@@ -6,8 +6,12 @@ export type TCSSIndent =
   | `${number}%`
 
 export enum Pages {
-  main = '/',
+  gallery = '/',
   contacts = '/contacts',
   shop = '/shop',
   blog = '/blog',
+}
+
+export type TPageInitialData<Data> = {
+  initialData: Data
 }

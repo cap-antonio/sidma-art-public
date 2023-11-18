@@ -1,0 +1,9 @@
+@import 'src/shared/styles/index.scss';
+
+.image-wrapper {
+  position: relative;
+}
+.image {
+  width: 100%;
+  object-fit: cover;
+}

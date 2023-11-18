@@ -1,20 +1,20 @@
 import { FC } from 'react'
-import { BurgerWrapper, StyledHeader } from './styles'
+import './styles.scss'
 
-import { IconButton } from 'src/shared/ui'
-import { toggleDrawer, useDispatch } from 'src/shared/store'
-import { NavigationLinks } from 'src/entities'
+import { IconButton } from '@shared/ui'
+import { toggleDrawer, useDispatch } from '@shared/store'
+import { NavigationLinks } from '@entities'
 
 export const Header: FC = () => {
   const dispatch = useDispatch()
   const openDrawer = () => dispatch(toggleDrawer())
 
   return (
-    <StyledHeader>
+    <header className="header">
       <NavigationLinks />
-      <BurgerWrapper>
+      <div className="burger-wrapper">
         <IconButton iconName="Burger" onClick={openDrawer} />
-      </BurgerWrapper>
-    </StyledHeader>
+      </div>
+    </header>
   )
 }

@@ -1,0 +1,15 @@
+@mixin padding($size: 8px, $direction: '') {
+  @if ($direction == '') {
+    padding: $size;
+  } @else {
+    padding-#{$direction}: $size;
+  }
+}
+
+@mixin margin($size: 8px, $direction: '') {
+  @if ($direction == '') {
+    margin: $size;
+  } @else {
+    margin-#{$direction}: $size;
+  }
+}

@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react'
 
-import { StyledPageHeader } from './styles'
+import './styles.scss'
 
 export const PageHeader: FC<PropsWithChildren> = ({ children }) => (
-  <StyledPageHeader>{children}</StyledPageHeader>
+  <h1 className="page-header">{children}</h1>
 )

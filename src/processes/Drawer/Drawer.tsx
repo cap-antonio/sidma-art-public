@@ -1,16 +1,12 @@
 import { FC } from 'react'
+import cn from 'classnames'
 
-import {
-  CloseButtonWrapper,
-  DrawerBody,
-  DrawerHeader,
-  StyledDrawer,
-} from './styles'
+import './styles.scss'
 
-import { toggleDrawer, useDispatch, useSelector } from 'src/shared/store'
-import { TDrawerContent } from 'src/shared/store/modules/modal/types'
-import { IconButton } from 'src/shared/ui'
-import { NavigationLinks } from 'src/entities'
+import { toggleDrawer, useDispatch, useSelector } from '@shared/store'
+import { TDrawerContent } from '@shared/store/modules/modal/types'
+import { IconButton } from '@shared/ui'
+import { NavigationLinks } from '@entities'
 
 const contents: Record<TDrawerContent, JSX.Element> = {
   headerLinks: <NavigationLinks kind="drawer" />,
@@ -22,14 +18,18 @@ export const Drawer: FC = () => {
   const dispatch = useDispatch()
   const closeDrawer = () => dispatch(toggleDrawer())
 
+  const drawerClassNames = cn('drawer', {
+    opened: isOpen,
+  })
+
   return (
-    <StyledDrawer isOpen={isOpen}>
-      <DrawerHeader>
-        <CloseButtonWrapper>
+    <aside className={drawerClassNames}>
+      <div className="drawer-header">
+        <div className="close-button-wrapper">
           <IconButton iconName="Close" onClick={closeDrawer} />
-        </CloseButtonWrapper>
-      </DrawerHeader>
-      <DrawerBody>{contents[content]}</DrawerBody>
-    </StyledDrawer>
+        </div>
+      </div>
+      <div className="drawer-body">{contents[content]}</div>
+    </aside>
   )
 }

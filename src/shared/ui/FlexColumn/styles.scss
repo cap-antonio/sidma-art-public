@@ -1,0 +1,7 @@
+@import 'src/shared/styles/index.scss';
+.flex-column {
+  display: flex;
+  flex-direction: column;
+
+  @include padding();
+}

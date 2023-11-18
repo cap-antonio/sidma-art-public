@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react'
 
 import { Header } from '../../widgets/Header'
-import { MainWrapper } from './styles'
+import './styles.scss'
 import { Drawer } from '../Drawer'
 
 export const BaseLayout: FC<PropsWithChildren> = ({ children }) => {
@@ -9,7 +9,7 @@ export const BaseLayout: FC<PropsWithChildren> = ({ children }) => {
     <div id={'BASE_LAYOUT_ID'} className="body">
       <Drawer />
       <Header />
-      <MainWrapper>{children}</MainWrapper>
+      <div className="main-wrapper">{children}</div>
     </div>
   )
 }

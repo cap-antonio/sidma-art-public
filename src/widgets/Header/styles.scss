@@ -1,0 +1,28 @@
+@import 'src/shared/styles/index.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: $headerHeight;
+  box-shadow: 0px 0px 10px $black;
+
+  @include md {
+    justify-content: space-between;
+  }
+
+  .burger-wrapper {
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    margin-inline: 8px;
+
+    @include md {
+      display: flex;
+
+      margin-left: auto;
+    }
+  }
+}

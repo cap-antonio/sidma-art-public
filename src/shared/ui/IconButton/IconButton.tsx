@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { StyledIconButton } from './styles'
+import './styles.scss'
 import { Icon } from '../Icon'
 
 import { TIconButton } from './types'
@@ -10,8 +10,8 @@ export const IconButton: FC<TIconButton> = ({
   iconName = 'Avatar',
 }) => {
   return (
-    <StyledIconButton onClick={onClick}>
+    <div className="icon-button" onClick={onClick}>
       <Icon name={iconName} />
-    </StyledIconButton>
+    </div>
   )
 }

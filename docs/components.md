@@ -2,7 +2,7 @@
 
 ## generic компоненты
 
-Generic components are stored in `src/components/generic`. It is important to
+Generic components are stored in `src/shared/ui`. It is important to
 understand that such components can't be subscribed on store. They must be the
 clean functions.
 Import from ouside of generic folder is prohibited.
@@ -10,7 +10,7 @@ Import from ouside of generic folder is prohibited.
 ## shared компоненты
 
 When you need to create a reusable components with store subscription, that
-component should be locate in `src/components/shared`.
+component should be locate in `src/shared`.
 
 ## Component
 
@@ -19,7 +19,7 @@ If a new component is called `SomeComponent`, then you should create a folder
 with the same name `SomeComponent`, which will contain:
 
 - `SomeComponent.tsx` which contain a new component
-- `styles.ts` with styles for the particular component (optional)
+- `styles.scss` with styles for the particular component (optional)
 - `types.ts` with types for the particular component (optional)
 - `hooks.ts` with hooks for the particular component (optional)
 - `index.ts` for exporting staff you need from this folder
