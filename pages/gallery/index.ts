@@ -1,7 +1,7 @@
 import { galleryListQuery } from '@shared/api'
 import { getApolloClient } from '../../apollo-client'
 
-export { default } from '../../src/pages/GalleryPage'
+export { default } from '../../src/pages/GalleriesPage'
 
 export async function getServerSideProps() {
   const apolloClient = getApolloClient()

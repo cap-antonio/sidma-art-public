@@ -1,16 +1,12 @@
 import { FC } from 'react'
-import { useRouter } from 'next/router'
 
 import './styles.scss'
 import { FlexRow } from '@shared/ui'
-import { useGalleryItem } from '@shared/api'
+import { useGallery } from '@shared/api'
 import { Card } from '@entities'
 
-export const Gallery: FC = () => {
-  const router = useRouter()
-  const { id } = router.query
-
-  const { data, loading } = useGalleryItem(id)
+export const Galleries: FC = () => {
+  const { data, loading } = useGallery()
 
   return (
     <FlexRow justify="center">
@@ -20,8 +16,8 @@ export const Gallery: FC = () => {
           <>Loading...</>
         ) : (
           <>
-            {data?.map((item, i) => (
-              <Card key={i} {...item} as="expandable" />
+            {data?.map((category, i) => (
+              <Card key={i} {...category} url="gallery" />
             ))}
           </>
         )}

@@ -3,8 +3,8 @@ import cn from 'classnames'
 
 import './styles.scss'
 
-import { toggleDrawer, useDispatch, useSelector } from '@shared/store'
-import { TDrawerContent } from '@shared/store/modules/modal/types'
+import { toggleDrawer, useDispatch, useSelector } from '@app/store'
+import { TDrawerContent } from '@app/store/modules/modal/types'
 import { IconButton } from '@shared/ui'
 import { NavigationLinks } from '@entities'
 
