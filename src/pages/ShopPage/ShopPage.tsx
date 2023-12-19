@@ -1,13 +1,11 @@
 import { FC } from 'react'
-import Head from 'next/head'
+
+import { PageHeader } from '@entities'
 
 export const ShopPage: FC = () => {
   return (
     <section>
-      <Head>
-        <title>Shop</title>
-      </Head>
-      Магазин
+      <PageHeader>Shop</PageHeader>
     </section>
   )
 }

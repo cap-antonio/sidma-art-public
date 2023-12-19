@@ -2,7 +2,7 @@ import { FC } from 'react'
 import './styles.scss'
 
 import { IconButton } from '@shared/ui'
-import { toggleDrawer, useDispatch } from '@shared/store'
+import { toggleDrawer, useDispatch } from '@app/store'
 import { NavigationLinks } from '@entities'
 
 export const Header: FC = () => {
