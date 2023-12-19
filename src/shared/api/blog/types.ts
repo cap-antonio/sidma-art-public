@@ -13,6 +13,7 @@ export type TPost = {
     role?: string
     avatar?: string
   }>
+  preview?: string
   image: {
     src: string
     alt: string
