@@ -13,6 +13,7 @@ export type TDirectusGalleryItem = {
   description?: string
   // TODO: Array<enums>
   variants: Array<string>
+  image: TDirectusImage
 }
 
 export type TGallery = {
@@ -23,9 +24,4 @@ export type TGallery = {
     src: string
     alt: string
   }
-}
-
-export type TDirectusDictionary = {
-  id: string
-  title: string
 }

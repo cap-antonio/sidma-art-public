@@ -4,31 +4,25 @@ import { useRouter } from 'next/router'
 import './styles.scss'
 import { FlexRow } from '@shared/ui'
 import { useGalleryItem } from '@shared/api'
-
-// TODO: add dictionary
-const mock: Record<string, string> = {
-  heads: '1',
-  Mountains: '2',
-  hands: '3',
-}
+import { Card } from '@entities'
 
 export const Gallery: FC = () => {
   const router = useRouter()
-  const { name } = router.query
+  const { id } = router.query
 
-  const {} = useGalleryItem(typeof name === 'string' ? mock[name] : '1')
+  const { data, loading } = useGalleryItem(id)
 
   return (
     <FlexRow justify="center">
       <div className="category-wrapper">
-        {true ? (
+        {loading ? (
           // TODO replace text with true Loader
           <>Loading...</>
         ) : (
           <>
-            {/* {items.map((item, i) => (
-              <ItemCard key={i} {...item} />
-            ))} */}
+            {data?.map((item, i) => (
+              <Card key={i} {...item} as="expandable" />
+            ))}
           </>
         )}
       </div>

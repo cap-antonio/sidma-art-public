@@ -1,12 +1,12 @@
-import { BaseLayout } from '@processes'
-import { store } from '@shared/store'
+import { store } from '@app/store'
 import type { AppProps } from 'next/app'
 import '@shared/styles/global.scss'
-
-// import "../i18n"
 import { Provider } from 'react-redux'
 import { ApolloProvider } from '@apollo/client'
+
+// import "../i18n"
 import { useApollo } from '../apollo-client'
+import { BaseLayout } from '@features'
 
 const App = ({ Component, pageProps }: AppProps) => {
   const apolloClient = useApollo(pageProps)

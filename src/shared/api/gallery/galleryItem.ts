@@ -1,58 +1,37 @@
 import { gql, useQuery } from '@apollo/client'
 
 import { TDirectusResponse } from '../types'
-import { TDirectusDictionary, TDirectusGalleryItem } from './types'
+import { TDirectusGalleryItem } from './types'
+import { prepareImage } from '../helpers'
 
 export const galleryItemListQuery = gql`
-  query GalleryItem($id: ID!) {
-    gallery_item_by_id(id: $id) {
+  query GetGallryItem($galleryId: GraphQLStringOrFloat) {
+    gallery_item(filter: { gallery_id: { id: { _eq: $galleryId } } }) {
       id
-      variants
-      description
       title
+      image {
+        id
+      }
     }
   }
 `
 
-export const dictionaryQuery = gql`
-  query Dictionary {
-    gallery {
-      id
-      title
-    }
-  }
-`
-
-export const useGalleryItem = (name: string) => {
-  const { data: dictionary } = useQuery<
-    TDirectusResponse<'gallery', Array<TDirectusDictionary>>
-  >(
-    dictionaryQuery,
-    // {
-    //   variables: opts,
-    // },
-  )
-
-  const preparedDictionary = dictionary?.gallery.reduce<Record<string, string>>(
-    (acc, gallery) => {
-      const title = gallery.title.trim()
-      acc[gallery.id] = title
-      acc[title] = gallery.id
-      return acc
-    },
-    {},
-  )
-
-  // TODO
-  const galleryId = preparedDictionary ? preparedDictionary[name] : '1'
-
+export const useGalleryItem = (galleryId?: string | Array<string>) => {
   const { data, ...rest } = useQuery<
-    TDirectusResponse<'gallery_item_by_id', Array<TDirectusGalleryItem>>
+    TDirectusResponse<'gallery_item', Array<TDirectusGalleryItem>>
   >(galleryItemListQuery, {
     variables: {
-      id: galleryId,
+      galleryId,
     },
   })
 
-  return { data: data?.gallery_item_by_id, ...rest }
+  const preparedGalleryItems = data?.gallery_item.map((gallery) => {
+    return {
+      ...gallery,
+      title: gallery.title.trim(),
+      image: prepareImage(gallery.image.id, gallery.title),
+    }
+  })
+
+  return { data: preparedGalleryItems, ...rest }
 }

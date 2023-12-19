@@ -4,6 +4,7 @@ import { prepareImage } from '../helpers'
 
 import { TDirectusResponse } from '../types'
 import { TDirectusGallery } from './types'
+import { capitalizeFirstCharacter } from '@shared/utils/helpers'
 
 export const galleryListQuery = gql`
   query Gallery {
@@ -37,4 +38,27 @@ export const useGallery = () => {
   })
 
   return { data: preparedGallery, ...rest }
+}
+
+export const galleryTitleQuery = gql`
+  query GalleryTitle($id: ID!) {
+    gallery_by_id(id: $id) {
+      title
+    }
+  }
+`
+
+export const useGalleryTitle = (id?: string | Array<string>) => {
+  const { data, ...rest } = useQuery<
+    TDirectusResponse<'gallery_by_id', TDirectusGallery>
+  >(galleryTitleQuery, {
+    variables: {
+      id,
+    },
+  })
+
+  return {
+    ...rest,
+    title: capitalizeFirstCharacter(data?.gallery_by_id.title.trim() || ''),
+  }
 }
