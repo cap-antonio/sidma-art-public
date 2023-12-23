@@ -4,20 +4,20 @@ import { useTranslation } from 'react-i18next'
 
 import { formatDate } from '@shared/utils'
 import './styles.scss'
-import '../styles.scss'
-import { FlexRow, FlexColumn, Image } from '@shared/ui'
+import { FlexColumn, FlexRow, Image } from '@shared/ui'
 
-import { TAnotherPost } from './types'
+import { TPostPreview } from './types'
 import { Pages } from '@shared/types'
 
-export const AnotherPost: FC<TAnotherPost> = ({
-  tags,
+export const PostPreview: FC<TPostPreview> = ({
+  previewText,
   title,
   image,
   author,
+  tags,
   published,
   id: postId,
-  previewText,
+  type,
 }) => {
   const {
     i18n: { language },
@@ -27,10 +27,20 @@ export const AnotherPost: FC<TAnotherPost> = ({
   const handleClick = () => {
     push(`${Pages.blog}/${postId}`)
   }
-  return (
-    <div className="another-post" onClick={handleClick}>
-      <Image src={image.src} alt={image.alt} className="another-post-img" />
 
+  function getClassName(isImage: boolean) {
+    if (type === 'first') {
+      return isImage ? 'first-post-img' : 'first-post'
+    } else if (type === 'second') {
+      return isImage ? 'secondary-post-img' : 'secondary-post'
+    } else if (type === 'other') {
+      return isImage ? 'another-post-img' : 'another-post'
+    }
+  }
+
+  return (
+    <div className={getClassName(false)} onClick={handleClick}>
+      <Image src={image.src} alt={image.alt} className={getClassName(true)} />
       <FlexColumn>
         <FlexRow>
           {author.map(({ name, id }) => (
@@ -38,17 +48,14 @@ export const AnotherPost: FC<TAnotherPost> = ({
               {name}
             </p>
           ))}
-
           <span>&#8226;</span>
           <p className="meta">{formatDate(published, language)}</p>
         </FlexRow>
-
         <p className="title">{title}</p>
         <p className="text-preview">{previewText}</p>
-
         <FlexRow wrap>
           {tags.map((tag, i) => (
-            <div key={tag + i} className="tag">
+            <div className="tag" key={tag + i}>
               {tag}
             </div>
           ))}
