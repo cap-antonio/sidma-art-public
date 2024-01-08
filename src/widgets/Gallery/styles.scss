@@ -1,16 +1,14 @@
 @import 'src/shared/styles/index.scss';
 
-.category-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
+.gallery-wrapper {
   width: 100%;
-  max-width: 1200px;
-  padding: 16px;
-  gap: 8px;
+}
 
-  @include sm {
-    flex-direction: column;
-  }
+.sub-wrapper {
+  width: 100%;
+  background: $subCategoryBg;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 1px 1px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 1px 1px 6px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 1px 1px 6px 0px rgba(0, 0, 0, 0.75);
 }

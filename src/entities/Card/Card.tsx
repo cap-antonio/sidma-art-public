@@ -11,6 +11,7 @@ export const Card: FC<TCard> = ({
   image,
   as = 'link',
   url,
+  onClick,
 }) => {
   const content = (
     <div className={`${as}-card-wrapper`}>
@@ -29,10 +30,8 @@ export const Card: FC<TCard> = ({
     </div>
   )
   return as === 'link' ? (
-    <Link href={`/${url}/${id}`} className="no-hover">
-      {content}
-    </Link>
+    <Link href={`/${url}/${id}`}>{content}</Link>
   ) : (
-    <div className="no-hover">{content}</div>
+    <div onClick={onClick}>{content}</div>
   )
 }

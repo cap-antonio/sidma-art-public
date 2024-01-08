@@ -1,4 +1,4 @@
-import { gql, useQuery } from '@apollo/client'
+import { QueryFunctionOptions, gql, useQuery } from '@apollo/client'
 
 import { TDirectusResponse } from '../types'
 import { TDirectusGalleryItem } from './types'
@@ -16,10 +16,14 @@ export const galleryItemListQuery = gql`
   }
 `
 
-export const useGalleryItem = (galleryId?: string | Array<string>) => {
+export const useGalleryItem = (
+  galleryId: string | Array<string>,
+  options: QueryFunctionOptions,
+) => {
   const { data, ...rest } = useQuery<
     TDirectusResponse<'gallery_item', Array<TDirectusGalleryItem>>
   >(galleryItemListQuery, {
+    ...options,
     variables: {
       galleryId,
     },

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { FiltersColumn, Gallery } from '@widgets'
+import { Gallery } from '@widgets'
 import { useRouter } from 'next/router'
 
 import './styles.scss'
@@ -15,13 +15,9 @@ export const GalleryPage: FC = () => {
   return (
     <section>
       <PageHeader>{title}</PageHeader>
-      <div
-        className="wrapper"
-        style={{ display: 'flex', flexDirection: 'row' }}
-      >
-        <FiltersColumn />
-        <Gallery />
-      </div>
+      {/* TODO */}
+      {/* <FiltersColumn /> */}
+      <Gallery />
     </section>
   )
 }

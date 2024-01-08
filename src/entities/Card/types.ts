@@ -5,4 +5,5 @@ export type TCard = {
   image: { src: string; alt: string }
   as?: 'link' | 'expandable'
   url?: string
+  onClick?: () => void
 }
